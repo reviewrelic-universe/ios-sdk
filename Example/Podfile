@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '12.0'
+
+target 'ReviewRelic_Example' do
+  pod 'ReviewRelic', :path => '../'
+
+  target 'ReviewRelic_Tests' do
+    inherit! :search_paths
+
+  end
+end
