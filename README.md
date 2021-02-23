@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 [![Platform](https://img.shields.io/cocoapods/p/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 
+## UNDER DEVELOPMENT
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -26,4 +28,4 @@ raheelsadiq, “raheel.sadiq.08@gmail.com”
 
 ## License
 
-ReviewRelic is available under the MIT license. See the LICENSE file for more info.
+ReviewRelic is available under the Apache license. See the LICENSE file for more info.

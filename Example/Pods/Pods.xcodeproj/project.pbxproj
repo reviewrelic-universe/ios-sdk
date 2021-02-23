@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = ReviewRelic;
+			productName = ReviewRelic;
 		};
 /* End PBXAggregateTarget section */
 
@@ -49,20 +50,20 @@
 		0CA936C2D67B439DC6A50A8C0D785A38 /* Pods-ReviewRelic_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReviewRelic_Example-umbrella.h"; sourceTree = "<group>"; };
 		1E0F9242EFD869B0D11108E93EE30F40 /* Pods-ReviewRelic_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Tests-Info.plist"; sourceTree = "<group>"; };
 		312B0252E1C25C2E46C458EAD746301B /* Pods-ReviewRelic_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Example-Info.plist"; sourceTree = "<group>"; };
-		31F6CA105ED407D3EBA42D132454435D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		31F6CA105ED407D3EBA42D132454435D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3600A8D1A02108AF8E7C5D38D0B99625 /* Pods-ReviewRelic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3F62555578310756CF691782FEE88FBD /* Pods-ReviewRelic_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		48A1B558EBFAE77CCC1EF3FD7D73B996 /* Pods-ReviewRelic_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReviewRelic_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4AFB61E3AFE25E90C353D6C087BC1928 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4AFB61E3AFE25E90C353D6C087BC1928 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55D60ACB9D5231925DB1A8FF7A0BBEB6 /* Pods-ReviewRelic_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReviewRelic_Example.modulemap"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		76BB9DAC593DB7A3BF698794D06C197B /* Pods-ReviewRelic_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		8F7AB90C79324F25355B74530316A7FC /* Pods_ReviewRelic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Example.framework; path = "Pods-ReviewRelic_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9211FEDC23935CCF55C85CCD610A6168 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Tests.framework; path = "Pods-ReviewRelic_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F7AB90C79324F25355B74530316A7FC /* Pods_ReviewRelic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9211FEDC23935CCF55C85CCD610A6168 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9817ED8F66EE74281DDFE7DEAA252CBC /* Pods-ReviewRelic_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReviewRelic_Tests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8365AA018A69F13029E8A807F62C10B /* Pods-ReviewRelic_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Example-dummy.m"; sourceTree = "<group>"; };
-		ABF52246B502FF537C15F22DD321E3D0 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ABF52246B502FF537C15F22DD321E3D0 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		BB4CD9FFDFA9CFF5F79B6032FB9EFBEF /* Pods-ReviewRelic_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C84A1A58E9F3B94C44F9FF9C826C19F8 /* ReviewRelic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.debug.xcconfig; sourceTree = "<group>"; };
 		D47033E9B7D2B559322361E37BABD8D5 /* Pods-ReviewRelic_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -573,8 +574,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
