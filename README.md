@@ -22,10 +22,6 @@ it, simply add the following line to your Podfile:
 pod 'ReviewRelic'
 ```
 
-## Author
-
-raheelsadiq, “raheel.sadiq.08@gmail.com”
-
 ## License
 
 ReviewRelic is available under the Apache license. See the LICENSE file for more info.
