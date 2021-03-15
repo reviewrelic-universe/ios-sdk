@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-
-
 class RRUITextView: UITextView, UITextViewDelegate {
     
     override func awakeFromNib() {
@@ -39,7 +37,7 @@ class RRUITextView: UITextView, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-//        manageScrolling()
+        manageScrolling()
     }
     
     func manageScrolling(){
@@ -49,13 +47,5 @@ class RRUITextView: UITextView, UITextViewDelegate {
         }else{
             isScrollEnabled = false
         }
-    }
-    
-    override func shouldChangeText(in range: UITextRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            return false
-        }
-        
-        return true
     }
 }

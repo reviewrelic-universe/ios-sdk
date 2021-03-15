@@ -35,7 +35,12 @@ enum ReviewRelicModels {
         }
         
         struct WordsData {
+            let words: [Word]
             
+            struct Word {
+                let title: String
+                let rating: Int
+            }
         }
 
     }

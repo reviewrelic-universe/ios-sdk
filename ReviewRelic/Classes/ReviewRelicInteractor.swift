@@ -26,7 +26,7 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
     // MARK: Fetch
     
     func fetchData() {
-        
+        presenter?.presentData(response: .init())
     }
     
     func submitData(request: ReviewRelicModels.Request) {

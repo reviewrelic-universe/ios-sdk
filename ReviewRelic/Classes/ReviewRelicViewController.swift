@@ -19,6 +19,18 @@ class ReviewRelicViewController: UIViewController {
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var starsStackView: UIStackView!
     @IBOutlet weak var commentTextView: RRUITextView!
+    @IBOutlet weak var wordsCollectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var wordsCollectionView: UICollectionView!{
+        didSet{
+            wordsCollectionView.register(UINib(nibName:"WordsCollectionViewCell", bundle: ReviewRelic.shared.bundle), forCellWithReuseIdentifier:"WordsCollectionViewCell")
+            let alignedFlowLayout = wordsCollectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+            alignedFlowLayout?.horizontalAlignment = .left
+            alignedFlowLayout?.verticalAlignment = .top
+            alignedFlowLayout?.minimumLineSpacing = 10
+            alignedFlowLayout?.minimumInteritemSpacing = 10
+            alignedFlowLayout?.scrollDirection = .vertical
+        }
+    }
     
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!{
@@ -29,6 +41,12 @@ class ReviewRelicViewController: UIViewController {
     
     var interactor: ReviewRelicBusinessLogic?
     var viewModel: ReviewRelicModels.ViewModel?
+    var words: [ReviewRelicModels.ViewModel.WordsData.Word] = []{
+        didSet{
+            wordsCollectionView.reloadData()
+            wordsCollectionViewHeight.constant = wordsCollectionView.collectionViewLayout.collectionViewContentSize.height
+        }
+    }
     // MARK: Object lifecycle
     
     class func instanceFromNib() -> ReviewRelicViewController {
@@ -75,7 +93,7 @@ class ReviewRelicViewController: UIViewController {
     // MARK: Requsts
     
     func requestData() {
-        interactor?.submitData(request: .init(rating: rating))
+        interactor?.fetchData()
     }
     
     var rating: Int = 0
@@ -93,8 +111,8 @@ extension ReviewRelicViewController {
                 starsStackView.shake()
                 return
             }
-        case .words(let _):
-            
+        case .words(let wordsData):
+            self.words = wordsData.words
             break
         }
         
@@ -134,11 +152,12 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
         switch viewModel.ratingType {
         
         case .stars(let starsData):
+            wordsCollectionView.isHidden = true
             setupStarsReview(starsData: starsData)
         
         case .words(let wordsData):
-            print(wordsData)
-            break
+            words = wordsData.words
+            starsStackView.isHidden = true
         }
     }
     
@@ -155,5 +174,29 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
             starButton.addTarget(self, action: #selector(starAction(_:)), for: .touchUpInside)
             starsStackView.addArrangedSubview(starButton)
         }
+    }
+}
+
+extension ReviewRelicViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        words.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordsCollectionViewCell", for: indexPath) as! WordsCollectionViewCell
+        
+        cell.wordLabel.text = words[indexPath.row].title
+        cell.wordLabel.font = UIFont.systemFont(ofSize: 14)
+        cell.containerView.setBorder(color: UIColor.lightGray.withAlphaComponent(0.3), width: 0.8)
+        cell.containerView.setRoundedCorner(radius: 18)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = words[indexPath.row].title.width(withConstrainedHeight: 36, font: UIFont.systemFont(ofSize: 14)) + 32
+        return CGSize(width: width, height: 36)
     }
 }
