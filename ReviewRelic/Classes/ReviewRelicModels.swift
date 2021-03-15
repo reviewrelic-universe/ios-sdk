@@ -21,7 +21,7 @@ enum ReviewRelicModels {
     struct ViewModel {
         
         let ratingType: RatingType
-        let themeColro: UIColor
+        let themeColor: UIColor
         
         enum RatingType {
             case stars(StarsData)

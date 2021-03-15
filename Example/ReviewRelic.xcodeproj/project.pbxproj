@@ -41,7 +41,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ReviewRelic_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviewRelic_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		852BA4A171305D34835DC858 /* ReviewRelic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ReviewRelic.podspec; path = ../ReviewRelic.podspec; sourceTree = "<group>"; };
+		852BA4A171305D34835DC858 /* ReviewRelic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ReviewRelic.podspec; path = ../ReviewRelic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F6AFBCE25F6D4380041061D /* ReviewRelic_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F6AFBCF25F6D4390041061D /* ReviewRelicViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicViewControllerTests.swift; sourceTree = "<group>"; };
 		B235575C7D2598B4124043D2 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };

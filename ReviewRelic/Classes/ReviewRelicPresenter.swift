@@ -26,7 +26,7 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
         
         let viewModel = ReviewRelicModels.ViewModel(
             ratingType: .stars(starData),
-            themeColro: ReviewRelic.shared.data!.themeColor)
+            themeColor: ReviewRelic.shared.data!.themeColor)
         viewController?.displayData(viewModel: viewModel)
     }
 }

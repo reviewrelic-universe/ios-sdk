@@ -14,25 +14,22 @@ class RRUITextView: UITextView, UITextViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setPlaceHolder(on: true)
+        setPlaceHolder()
+        delegate = self
     }
-    
+
     let placeHolder = "Add any further comments"
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeHolder {
-            setPlaceHolder(on: false)
-        }
+        setPlaceHolder()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            setPlaceHolder(on: true)
-        }
+        setPlaceHolder()
     }
     
-    func setPlaceHolder(on: Bool) {
-        if on {
+    func setPlaceHolder() {
+        if text.trimWhiteSpaces() == "" {
             text = placeHolder
             textColor = UIColor.lightGray
         }else{
@@ -41,12 +38,22 @@ class RRUITextView: UITextView, UITextViewDelegate {
         }
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    func textViewDidChange(_ textView: UITextView) {
+//        manageScrolling()
+    }
+    
+    func manageScrolling(){
         
-        if text == "" {
-            setPlaceHolder(on: true)
+        if textContainer.size.height > 80 {
+            isScrollEnabled = true
         }else{
-            setPlaceHolder(on: false)
+            isScrollEnabled = false
+        }
+    }
+    
+    override func shouldChangeText(in range: UITextRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            return false
         }
         
         return true

@@ -31,8 +31,5 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
     
     func submitData(request: ReviewRelicModels.Request) {
         worker = ReviewRelicWorker()
-        
-        let response = ReviewRelicModels.Response()
-        presenter?.presentData(response: response)
     }
 }

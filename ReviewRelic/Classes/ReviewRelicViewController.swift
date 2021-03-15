@@ -19,12 +19,16 @@ class ReviewRelicViewController: UIViewController {
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var starsStackView: UIStackView!
     @IBOutlet weak var commentTextView: RRUITextView!
-    @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!{
+        didSet{
+            closeButton.setRoundedCorner(radius: 15)
+        }
+    }
     
     var interactor: ReviewRelicBusinessLogic?
-    
+    var viewModel: ReviewRelicModels.ViewModel?
     // MARK: Object lifecycle
     
     class func instanceFromNib() -> ReviewRelicViewController {
@@ -81,12 +85,30 @@ class ReviewRelicViewController: UIViewController {
 extension ReviewRelicViewController {
     
     @IBAction func submitAction(_ sender: UIButton) {
+    
+        guard let viewModel = viewModel else { return }
+        switch viewModel.ratingType {
+        case .stars(_):
+            if rating == 0 {
+                starsStackView.shake()
+                return
+            }
+        case .words(let _):
+            
+            break
+        }
+        
         let request = ReviewRelicModels.Request(rating: rating)
         interactor?.submitData(request: request)
+        
+    }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
         
     @objc func starAction(_ sender: UIButton) {
-        
+        rating = sender.tag + 1
         for button in starsStackView.arrangedSubviews as! [UIButton] {
             if button.tag <= sender.tag {
                 button.isSelected = true
@@ -102,8 +124,10 @@ extension ReviewRelicViewController {
 extension ReviewRelicViewController: ReviewRelicDisplayLogic {
    
     func displayData(viewModel: ReviewRelicModels.ViewModel) {
-
-        submitButton.setBackgroundImage(viewModel.themeColro.image(), for: .normal)
+        self.viewModel = viewModel
+        closeButton.setBackgroundImage(viewModel.themeColor.withAlphaComponent(0.2).image(), for: .normal)
+        closeButton.tintColor = viewModel.themeColor
+        submitButton.setBackgroundImage(viewModel.themeColor.image(), for: .normal)
         submitButton.setRoundedCorner(radius: 6)
         submitButton.setTitle("Submit", for: .normal)
         submitButton.setTitleColor(.white, for: .normal)
