@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ReviewRelicBusinessLogic {
-    func fetchData()
+    func requestReviewData()
     func submitData(request: ReviewRelicModels.Request)
 }
 
@@ -25,8 +25,18 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
     
     // MARK: Fetch
     
-    func fetchData() {
-        presenter?.presentData(response: .init())
+    func requestReviewData() {
+        
+        guard let data = UserDefaults.rRDefaults?.value(forKey: Constants.settings) as? Data else {
+            presenter?.presentDataFailure()
+            return
+        }
+        
+        if let response = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: data) {
+            presenter?.presentData(response: response)
+        }else{
+            presenter?.presentDataFailure()
+        }
     }
     
     func submitData(request: ReviewRelicModels.Request) {

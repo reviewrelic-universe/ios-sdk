@@ -30,8 +30,10 @@ class RRUITextView: UITextView, UITextViewDelegate {
         if text.trimWhiteSpaces() == "" {
             text = placeHolder
             textColor = UIColor.lightGray
-        }else{
+        } else if text == placeHolder {
             text = ""
+            textColor = UIColor.darkText
+        } else{
             textColor = UIColor.darkText
         }
     }

@@ -12,6 +12,19 @@ extension UIImage {
     convenience init(namedInBundle named:String) {
         self.init(named: named, in: ReviewRelic.shared.bundle, compatibleWith: nil)!
     }
+    
+    convenience init?(base64String: String) {
+        
+        guard let imageData = Data(base64Encoded: base64String, options: Data.Base64DecodingOptions.ignoreUnknownCharacters) else {
+            return nil
+        }
+        self.init(data: imageData)
+    }
+    
+    class func convertBase64ToImage(imageString: String) -> UIImage {
+        let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+        return UIImage(data: imageData)!
+    }
 }
 
 extension String {
@@ -29,11 +42,17 @@ extension String {
 
 extension UIView {
     
+    func animateAfterConstraintChangeDuration(seconds value:Double) {
+        UIView.animate(withDuration: value, animations: { [weak self] in
+            self?.layoutIfNeeded()
+        })
+    }
+    
     func setBorder(color:UIColor, width:CGFloat) {
-         self.layer.borderWidth = width
-         self.layer.borderColor = color.cgColor
-         self.clipsToBounds = true
-     }
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+        self.clipsToBounds = true
+    }
     
     func setRoundedCorner(radius value:CGFloat) {
         self.layer.cornerRadius = value
@@ -95,7 +114,7 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-     convenience init(hex: Int) {
+    convenience init(hex: Int) {
         self.init(
             red: (hex >> 16) & 0xFF,
             green: (hex >> 8) & 0xFF,
@@ -118,7 +137,7 @@ extension UIColor {
             blue:  CGFloat((rgb &     0xFF)      )/255.0,
             alpha: alpha)
     }
-
+    
     func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()

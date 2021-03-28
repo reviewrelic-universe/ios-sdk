@@ -15,6 +15,7 @@
                 <outlet property="commentTextView" destination="R4V-f1-ZHm" id="qac-5W-dLu"/>
                 <outlet property="detailsLabel" destination="rOG-Ob-1Rb" id="BLz-ak-wL4"/>
                 <outlet property="logoImageView" destination="THn-D2-8fd" id="UGU-iY-QkC"/>
+                <outlet property="mainStackViewCenterConstraint" destination="8fg-go-xkm" id="ge8-xi-HNl"/>
                 <outlet property="shareYourExperienceLabel" destination="ugC-op-3ko" id="zfw-4u-ShH"/>
                 <outlet property="starsStackView" destination="hdc-Mg-9Jg" id="29c-j7-opK"/>
                 <outlet property="submitButton" destination="9uG-c2-MVQ" id="Xon-JA-wHx"/>
@@ -61,7 +62,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-V3-Uxa">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hdc-Mg-9Jg">
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hdc-Mg-9Jg">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="ayh-9d-92f"/>

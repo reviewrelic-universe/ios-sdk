@@ -7,93 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1043EF2EBD4BCFEDFEFC07CC731AE9A5 /* ReviewRelicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5C00C6B2FBBD78BE106B4BEBA72D7 /* ReviewRelicWorker.swift */; };
+		0779C665270CE19BE00DC0ADE101B9D7 /* WordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D252B18BDA14AC98A14D7A09B73982D /* WordsCollectionViewCell.swift */; };
+		0B9F814D9D49198B0967A782C04947D0 /* ReviewRelicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0E33519884A0C6A0BB1D9570B10EE9 /* ReviewRelicWorker.swift */; };
+		0BEC415554CF489FF0DD95A4FE57C6CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		1208A7275D51028D35C31EFF1D6D5371 /* Pods-ReviewRelic_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFED73B390D568D99D6C2FDE402F620 /* Pods-ReviewRelic_Tests-dummy.m */; };
-		120A8DBEC6C0BF7AA87927BB09F1180C /* ReviewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDEFD7B44288FBE0EBFA38E8DA60310 /* ReviewRelic.swift */; };
+		1409CF6B7979BE337F44DF733D161953 /* RRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E5C81B6C9FA2DA51A780A9CA73593 /* RRNetwork.swift */; };
 		1C4B295B99ED4F87656AEA58E5B4CC44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		1E6583857F2F64C1C902F5F57E9EF013 /* Pods-ReviewRelic_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82612B41B1C0FAAE43053BB07613BECF /* Pods-ReviewRelic_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2945DE3837881C756872C76031A4D946 /* RRUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAEFAB328D9112B17BD38774A43B0B /* RRUITextView.swift */; };
-		2DD0019DC3C46FAFC56A254C57CA3ECF /* ReviewRelicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092B0251998EF79ACD89035DF0A9B3D /* ReviewRelicViewController.swift */; };
-		3A623548EB73E0EA8B124B01A26FA9F9 /* RRAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166FD1FD530929ABED626F48853CFA3C /* RRAssets.xcassets */; };
-		53395B952D1DAC6F47D4826860B8FBCA /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD2ACB50CBB5EFAEA6D2DF840D4A1 /* AlignedCollectionViewFlowLayout.swift */; };
-		617F4CD5B13BFA72D550CAB918B5005A /* RRHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D825576506BF98625722949CA166360 /* RRHelpers.swift */; };
-		754667AD7C60313033B081753FC4CC35 /* WordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E693C109BAEBB4338474AD7E2D98252 /* WordsCollectionViewCell.swift */; };
-		7D767A80A50372C1B5F4F8B5F967AD9F /* ReviewRelic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4768BE930269176D943E003C3753AF10 /* ReviewRelic-dummy.m */; };
-		7EFC415ACF9CD07C64B5E73A41F01ECA /* ReviewRelicViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9BC77CD49D793C26021157ABDF5AE /* ReviewRelicViewController.xib */; };
-		9451E4B041857BE577C7ADAB21BE0B88 /* ReviewRelicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2075EB5DA3262292FB54F07E2BC1C86C /* ReviewRelicInteractor.swift */; };
-		98BD28FA705538D139F333B84192EC55 /* ReviewRelicModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF9FEB7E299587A92B27ADA95A00B9 /* ReviewRelicModels.swift */; };
-		AEA38F9AFB2C14DDF81123BC1C459C2E /* ReviewRelic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 288F0497A7E7994B2C9B5D4CA5FE6E67 /* ReviewRelic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		314DD4197C88E12F9B6A82E3DBCA1E3F /* ReviewRelicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46EC357DB6558044D888180DE202281 /* ReviewRelicInteractor.swift */; };
+		3BC2D78FBD7F5E98E6E176C675DE25F8 /* WordsCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = F014331295B78035A1430D9ED42C7959 /* WordsCollectionViewCell.xib */; };
+		62EF71B153EFBA82C4B46C58CF31FCF9 /* ReviewRelic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98899B92AE682D0A6690F6B5C118F97A /* ReviewRelic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		663D5BBFB42A4926EFAA561B8ED8178A /* RRAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3FED92B695D8F5F0D4BAC41F18F368 /* RRAssets.xcassets */; };
+		6E8CCB30820676E258699537C2E10F3D /* ReviewRelicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5C23C59DFCB765D43FB510ED5A992 /* ReviewRelicPresenter.swift */; };
+		887F0311EB799CC70DB9856B4389742A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */; };
+		8CE918EE1F1BFEA82E9A6612C863F3CD /* ReviewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEB4D56D403867DF6FAA6B2D591D99 /* ReviewRelic.swift */; };
+		96AF6A4CC8951CA5E06A64F3A2F6CC75 /* ReviewRelicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52A09576EB9B1181211BFD090C923A /* ReviewRelicViewController.swift */; };
+		A1D02A227456005683080EA97A2AB345 /* ReviewRelic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC18E073E7A8AFFA8A445B17F812871B /* ReviewRelic-dummy.m */; };
 		B036596B7E952EBAB34E91E50D71DE7F /* Pods-ReviewRelic_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FAF9C980361D36233A9174D30D62FEF /* Pods-ReviewRelic_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B44A0F802524311E6C31A211A21890DE /* ReviewRelicModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE8F8151C2C13018C9C0DA2244D7AE /* ReviewRelicModels.swift */; };
 		B91B8921F0FDECC85C2304899E44C3FF /* Pods-ReviewRelic_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 620AEFDFAC5050B52166629832AA0276 /* Pods-ReviewRelic_Example-dummy.m */; };
-		BFA9A8A340F8D1EB9E515E10B3C6F7D0 /* ReviewRelicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9CA7A27C3F3E7A8D937F961B9AF267 /* ReviewRelicPresenter.swift */; };
+		DA264B55B58FC6A00652CB9CB216CF32 /* RRHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391924BA6EF24D3A17FF95581883669 /* RRHelpers.swift */; };
 		DF34FCD0037F95C01F21FF17F88816A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E2CD2CDF64275D72C1BB14EEB7254670 /* WordsCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5707B7BC5A5418251A6090358B919F71 /* WordsCollectionViewCell.xib */; };
-		E48884F7BEFE776E0A795B595AE4D257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		EF85F93893683EACC723952B1D990264 /* RRUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6218BA2D72461D0B4537F11162DDD3ED /* RRUITextView.swift */; };
+		F2D3C8AAD32C79FD457B8FD45A786022 /* ReviewRelicViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 353DFCE57D83BDBD29928C3FE63A56DF /* ReviewRelicViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D15257DA79849512228811DCE8C6005 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A62CA5EA3C7CB55104A48B88C2CF9241;
-			remoteInfo = ReviewRelic;
-		};
-		CB9F4291F4A1DF4DA6B4E41A16AECDD3 /* PBXContainerItemProxy */ = {
+		6620AD5468BBD53F4AEF65A7D11ABBEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB8024995482C4D5BD918CA7E0ACD4AF;
 			remoteInfo = "Pods-ReviewRelic_Example";
 		};
+		6E5307CCFC7FB3534AAB867E7B5F8BF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A62CA5EA3C7CB55104A48B88C2CF9241;
+			remoteInfo = ReviewRelic;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07D5C00C6B2FBBD78BE106B4BEBA72D7 /* ReviewRelicWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelicWorker.swift; path = ReviewRelic/Classes/ReviewRelicWorker.swift; sourceTree = "<group>"; };
+		0391924BA6EF24D3A17FF95581883669 /* RRHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RRHelpers.swift; sourceTree = "<group>"; };
+		09BE8F8151C2C13018C9C0DA2244D7AE /* ReviewRelicModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicModels.swift; sourceTree = "<group>"; };
+		0C3FED92B695D8F5F0D4BAC41F18F368 /* RRAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = RRAssets.xcassets; path = ReviewRelic/Assets/RRAssets.xcassets; sourceTree = "<group>"; };
 		11AEE99CC6D3F8F0BE6D0A99663BC3A5 /* Pods-ReviewRelic_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Tests-Info.plist"; sourceTree = "<group>"; };
 		11F3AD0FC247975A504C82CCBCD7F71D /* Pods-ReviewRelic_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		148270CDC44FC653D22577920B018882 /* Pods-ReviewRelic_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		166FD1FD530929ABED626F48853CFA3C /* RRAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = RRAssets.xcassets; path = ReviewRelic/Assets/RRAssets.xcassets; sourceTree = "<group>"; };
-		18DAD2ACB50CBB5EFAEA6D2DF840D4A1 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlignedCollectionViewFlowLayout.swift; path = ReviewRelic/Classes/AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		1CD770E4786A869C7059B3C33D8A4148 /* ReviewRelic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReviewRelic-Info.plist"; sourceTree = "<group>"; };
-		1FFAEFAB328D9112B17BD38774A43B0B /* RRUITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RRUITextView.swift; path = ReviewRelic/Classes/RRUITextView.swift; sourceTree = "<group>"; };
-		2075EB5DA3262292FB54F07E2BC1C86C /* ReviewRelicInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelicInteractor.swift; path = ReviewRelic/Classes/ReviewRelicInteractor.swift; sourceTree = "<group>"; };
-		22AF9FEB7E299587A92B27ADA95A00B9 /* ReviewRelicModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelicModels.swift; path = ReviewRelic/Classes/ReviewRelicModels.swift; sourceTree = "<group>"; };
-		2391E9EB3BEDD243876A2A745F877250 /* ReviewRelic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.debug.xcconfig; sourceTree = "<group>"; };
+		158567133A6381BC7A0BA0D8AE6029F5 /* ReviewRelic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.release.xcconfig; sourceTree = "<group>"; };
+		1EE5C23C59DFCB765D43FB510ED5A992 /* ReviewRelicPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicPresenter.swift; sourceTree = "<group>"; };
 		26105990E391B0EABB824C333936C809 /* Pods-ReviewRelic_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReviewRelic_Example.modulemap"; sourceTree = "<group>"; };
-		288F0497A7E7994B2C9B5D4CA5FE6E67 /* ReviewRelic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-umbrella.h"; sourceTree = "<group>"; };
-		2AF9BC77CD49D793C26021157ABDF5AE /* ReviewRelicViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ReviewRelicViewController.xib; path = ReviewRelic/Classes/ReviewRelicViewController.xib; sourceTree = "<group>"; };
-		3E346EDF56246DC59E64312ADA756146 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		4768BE930269176D943E003C3753AF10 /* ReviewRelic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReviewRelic-dummy.m"; sourceTree = "<group>"; };
-		4D825576506BF98625722949CA166360 /* RRHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RRHelpers.swift; path = ReviewRelic/Classes/RRHelpers.swift; sourceTree = "<group>"; };
+		30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		353DFCE57D83BDBD29928C3FE63A56DF /* ReviewRelicViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ReviewRelicViewController.xib; sourceTree = "<group>"; };
+		3D52A09576EB9B1181211BFD090C923A /* ReviewRelicViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicViewController.swift; sourceTree = "<group>"; };
+		42F7D2D5E8E0CABC171A6D096DCE478A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4E5347B226F40647CB7F2AB876BE39B6 /* Pods-ReviewRelic_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReviewRelic_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5707B7BC5A5418251A6090358B919F71 /* WordsCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = WordsCollectionViewCell.xib; path = ReviewRelic/Classes/WordsCollectionViewCell.xib; sourceTree = "<group>"; };
 		5B37B3461C1B14558B6EFB1D8E181118 /* Pods-ReviewRelic_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReviewRelic_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5D62C4920CB3E998984327C52DD8B50B /* ReviewRelic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-prefix.pch"; sourceTree = "<group>"; };
 		616B6D631852D7899D9CE79DFA360C61 /* Pods-ReviewRelic_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		620AEFDFAC5050B52166629832AA0276 /* Pods-ReviewRelic_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Example-dummy.m"; sourceTree = "<group>"; };
+		6218BA2D72461D0B4537F11162DDD3ED /* RRUITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RRUITextView.swift; sourceTree = "<group>"; };
+		69D9FD5C2B6BE335C2816A200D871E64 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6CFED73B390D568D99D6C2FDE402F620 /* Pods-ReviewRelic_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Tests-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73FC22802AA661FEDD3379F752D71EB3 /* Pods-ReviewRelic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7AEE9542795ADFBC2876371472CB230F /* ReviewRelic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.release.xcconfig; sourceTree = "<group>"; };
-		7BDEFD7B44288FBE0EBFA38E8DA60310 /* ReviewRelic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelic.swift; path = ReviewRelic/Classes/ReviewRelic.swift; sourceTree = "<group>"; };
-		7E693C109BAEBB4338474AD7E2D98252 /* WordsCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordsCollectionViewCell.swift; path = ReviewRelic/Classes/WordsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7868DF4CBC0645CA186468A089C04293 /* ReviewRelic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReviewRelic-Info.plist"; sourceTree = "<group>"; };
+		7D252B18BDA14AC98A14D7A09B73982D /* WordsCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FAF9C980361D36233A9174D30D62FEF /* Pods-ReviewRelic_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReviewRelic_Tests-umbrella.h"; sourceTree = "<group>"; };
-		8092B0251998EF79ACD89035DF0A9B3D /* ReviewRelicViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelicViewController.swift; path = ReviewRelic/Classes/ReviewRelicViewController.swift; sourceTree = "<group>"; };
 		81028378B1F8624FC26372E1D31414DB /* Pods-ReviewRelic_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReviewRelic_Tests.modulemap"; sourceTree = "<group>"; };
 		82612B41B1C0FAAE43053BB07613BECF /* Pods-ReviewRelic_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReviewRelic_Example-umbrella.h"; sourceTree = "<group>"; };
+		84FEB4D56D403867DF6FAA6B2D591D99 /* ReviewRelic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelic.swift; path = ReviewRelic/Classes/ReviewRelic.swift; sourceTree = "<group>"; };
+		8671514A35304B99F71004F297D7B1BA /* ReviewRelic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-prefix.pch"; sourceTree = "<group>"; };
 		8D0040AAA4317D7AB6394AA72D6197DF /* Pods-ReviewRelic_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8F7AB90C79324F25355B74530316A7FC /* Pods_ReviewRelic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Example.framework; path = "Pods-ReviewRelic_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9211FEDC23935CCF55C85CCD610A6168 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Tests.framework; path = "Pods-ReviewRelic_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B1361CC422C3B37790F4E08278BED9 /* Pods-ReviewRelic_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReviewRelic_Example-frameworks.sh"; sourceTree = "<group>"; };
-		99825B44C0C0E5DD1CD345ED1E31CBA0 /* ReviewRelic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReviewRelic.modulemap; sourceTree = "<group>"; };
+		98899B92AE682D0A6690F6B5C118F97A /* ReviewRelic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C17A2F96DDB1E4A360875819618295D2 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A46EC357DB6558044D888180DE202281 /* ReviewRelicInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicInteractor.swift; sourceTree = "<group>"; };
+		B8661403121484BBB1FA4C14F5008B3D /* ReviewRelic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.debug.xcconfig; sourceTree = "<group>"; };
+		BC18E073E7A8AFFA8A445B17F812871B /* ReviewRelic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReviewRelic-dummy.m"; sourceTree = "<group>"; };
 		C3926A33332D94BA1780B39F718DFBC7 /* ReviewRelic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReviewRelic.framework; path = ReviewRelic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0E33519884A0C6A0BB1D9570B10EE9 /* ReviewRelicWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicWorker.swift; sourceTree = "<group>"; };
+		DA3949D222F2CD2F98314BC5C13FC82B /* ReviewRelic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReviewRelic.modulemap; sourceTree = "<group>"; };
 		E95BEAD947A371188DFB5B28ABA9BEB3 /* Pods-ReviewRelic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EB9CA7A27C3F3E7A8D937F961B9AF267 /* ReviewRelicPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelicPresenter.swift; path = ReviewRelic/Classes/ReviewRelicPresenter.swift; sourceTree = "<group>"; };
+		F014331295B78035A1430D9ED42C7959 /* WordsCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = WordsCollectionViewCell.xib; sourceTree = "<group>"; };
+		F06E5C81B6C9FA2DA51A780A9CA73593 /* RRNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RRNetwork.swift; sourceTree = "<group>"; };
 		F092734ADCB1BC224B3E563216AB22A8 /* Pods-ReviewRelic_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Example-Info.plist"; sourceTree = "<group>"; };
-		FA9A63ADD3854DAF293D3B910ACED3C1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F42F970A2C55455D6B8F278376F67ACD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7041AF444C24608C18E99B6FCAC824C0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E48884F7BEFE776E0A795B595AE4D257 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9680970EA57B3865063C7C49BBDB6718 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,34 +115,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA823BC7ECD4901BB38C24EC1C2BB0FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BEC415554CF489FF0DD95A4FE57C6CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04C3ED68AE7BC8EEFF28328181596A57 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				99825B44C0C0E5DD1CD345ED1E31CBA0 /* ReviewRelic.modulemap */,
-				4768BE930269176D943E003C3753AF10 /* ReviewRelic-dummy.m */,
-				1CD770E4786A869C7059B3C33D8A4148 /* ReviewRelic-Info.plist */,
-				5D62C4920CB3E998984327C52DD8B50B /* ReviewRelic-prefix.pch */,
-				288F0497A7E7994B2C9B5D4CA5FE6E67 /* ReviewRelic-umbrella.h */,
-				2391E9EB3BEDD243876A2A745F877250 /* ReviewRelic.debug.xcconfig */,
-				7AEE9542795ADFBC2876371472CB230F /* ReviewRelic.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ReviewRelic";
-			sourceTree = "<group>";
-		};
-		0D7C3A900E138A2E98B8F6665F578C5F /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				FA9A63ADD3854DAF293D3B910ACED3C1 /* LICENSE */,
-				3E346EDF56246DC59E64312ADA756146 /* README.md */,
-				C17A2F96DDB1E4A360875819618295D2 /* ReviewRelic.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		1CAFB988B814B23E5513A1708845C42C /* Pods-ReviewRelic_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,14 +140,6 @@
 			);
 			name = "Pods-ReviewRelic_Tests";
 			path = "Target Support Files/Pods-ReviewRelic_Tests";
-			sourceTree = "<group>";
-		};
-		23281CD99EE9BD48E17086D4A621DA7F /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				670C8672F0A317B5E1FF07FB22148DCF /* ReviewRelic */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		539B81687025D93AA1EF697295979B74 /* Products */ = {
@@ -191,27 +160,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		670C8672F0A317B5E1FF07FB22148DCF /* ReviewRelic */ = {
+		5B5C74A084558206F01BBBA269F89860 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18DAD2ACB50CBB5EFAEA6D2DF840D4A1 /* AlignedCollectionViewFlowLayout.swift */,
-				7BDEFD7B44288FBE0EBFA38E8DA60310 /* ReviewRelic.swift */,
-				2075EB5DA3262292FB54F07E2BC1C86C /* ReviewRelicInteractor.swift */,
-				22AF9FEB7E299587A92B27ADA95A00B9 /* ReviewRelicModels.swift */,
-				EB9CA7A27C3F3E7A8D937F961B9AF267 /* ReviewRelicPresenter.swift */,
-				8092B0251998EF79ACD89035DF0A9B3D /* ReviewRelicViewController.swift */,
-				2AF9BC77CD49D793C26021157ABDF5AE /* ReviewRelicViewController.xib */,
-				07D5C00C6B2FBBD78BE106B4BEBA72D7 /* ReviewRelicWorker.swift */,
-				166FD1FD530929ABED626F48853CFA3C /* RRAssets.xcassets */,
-				4D825576506BF98625722949CA166360 /* RRHelpers.swift */,
-				1FFAEFAB328D9112B17BD38774A43B0B /* RRUITextView.swift */,
-				7E693C109BAEBB4338474AD7E2D98252 /* WordsCollectionViewCell.swift */,
-				5707B7BC5A5418251A6090358B919F71 /* WordsCollectionViewCell.xib */,
-				0D7C3A900E138A2E98B8F6665F578C5F /* Pod */,
-				04C3ED68AE7BC8EEFF28328181596A57 /* Support Files */,
+				353DFCE57D83BDBD29928C3FE63A56DF /* ReviewRelicViewController.xib */,
+				F014331295B78035A1430D9ED42C7959 /* WordsCollectionViewCell.xib */,
+			);
+			name = Views;
+			path = ReviewRelic/Classes/Views;
+			sourceTree = "<group>";
+		};
+		5E26171FE71B2DB946D72A6B40E995DF /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3E387C77574F70467B11CA5103BA4BE /* ReviewRelic */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		645F0462E13122B035C436A288DD2BBA /* ReviewRelic */ = {
+			isa = PBXGroup;
+			children = (
+				A46EC357DB6558044D888180DE202281 /* ReviewRelicInteractor.swift */,
+				09BE8F8151C2C13018C9C0DA2244D7AE /* ReviewRelicModels.swift */,
+				1EE5C23C59DFCB765D43FB510ED5A992 /* ReviewRelicPresenter.swift */,
+				3D52A09576EB9B1181211BFD090C923A /* ReviewRelicViewController.swift */,
+				CF0E33519884A0C6A0BB1D9570B10EE9 /* ReviewRelicWorker.swift */,
+				7D252B18BDA14AC98A14D7A09B73982D /* WordsCollectionViewCell.swift */,
 			);
 			name = ReviewRelic;
-			path = ../..;
+			path = ReviewRelic/Classes/ReviewRelic;
 			sourceTree = "<group>";
 		};
 		BD595DD79EE7DE1A53BC08C35C45C86B /* Pods-ReviewRelic_Example */ = {
@@ -231,11 +209,48 @@
 			path = "Target Support Files/Pods-ReviewRelic_Example";
 			sourceTree = "<group>";
 		};
+		C352D297C78033D50ACC236CE0BA9A62 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F42F970A2C55455D6B8F278376F67ACD /* LICENSE */,
+				42F7D2D5E8E0CABC171A6D096DCE478A /* README.md */,
+				69D9FD5C2B6BE335C2816A200D871E64 /* ReviewRelic.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C7D492B4200F94335AC28F3A900FCE5C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */,
+				0391924BA6EF24D3A17FF95581883669 /* RRHelpers.swift */,
+				F06E5C81B6C9FA2DA51A780A9CA73593 /* RRNetwork.swift */,
+				6218BA2D72461D0B4537F11162DDD3ED /* RRUITextView.swift */,
+			);
+			name = Helpers;
+			path = ReviewRelic/Classes/Helpers;
+			sourceTree = "<group>";
+		};
+		C82D60D7F498702BF4AD95CCBDE3EA5E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA3949D222F2CD2F98314BC5C13FC82B /* ReviewRelic.modulemap */,
+				BC18E073E7A8AFFA8A445B17F812871B /* ReviewRelic-dummy.m */,
+				7868DF4CBC0645CA186468A089C04293 /* ReviewRelic-Info.plist */,
+				8671514A35304B99F71004F297D7B1BA /* ReviewRelic-prefix.pch */,
+				98899B92AE682D0A6690F6B5C118F97A /* ReviewRelic-umbrella.h */,
+				B8661403121484BBB1FA4C14F5008B3D /* ReviewRelic.debug.xcconfig */,
+				158567133A6381BC7A0BA0D8AE6029F5 /* ReviewRelic.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ReviewRelic";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				23281CD99EE9BD48E17086D4A621DA7F /* Development Pods */,
+				5E26171FE71B2DB946D72A6B40E995DF /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				539B81687025D93AA1EF697295979B74 /* Products */,
 				E32806086EFEAEE229A85103A6EB9EB0 /* Targets Support Files */,
@@ -259,22 +274,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		E3E387C77574F70467B11CA5103BA4BE /* ReviewRelic */ = {
+			isa = PBXGroup;
+			children = (
+				84FEB4D56D403867DF6FAA6B2D591D99 /* ReviewRelic.swift */,
+				0C3FED92B695D8F5F0D4BAC41F18F368 /* RRAssets.xcassets */,
+				C7D492B4200F94335AC28F3A900FCE5C /* Helpers */,
+				C352D297C78033D50ACC236CE0BA9A62 /* Pod */,
+				645F0462E13122B035C436A288DD2BBA /* ReviewRelic */,
+				C82D60D7F498702BF4AD95CCBDE3EA5E /* Support Files */,
+				5B5C74A084558206F01BBBA269F89860 /* Views */,
+			);
+			name = ReviewRelic;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2E8011DFEC1DFBF00EEDB61826392C56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62EF71B153EFBA82C4B46C58CF31FCF9 /* ReviewRelic-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5ADEA74A8E5782FC70A266F2DA36DB26 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B036596B7E952EBAB34E91E50D71DE7F /* Pods-ReviewRelic_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EF61487C1AFFCA6907A03C8A1D713A7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEA38F9AFB2C14DDF81123BC1C459C2E /* ReviewRelic-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +331,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F49B6231F2690998BECC6B13189D181 /* PBXTargetDependency */,
+				6675DAD5E5FE78A4AEEB94E97FBCA52C /* PBXTargetDependency */,
 			);
 			name = "Pods-ReviewRelic_Tests";
 			productName = "Pods-ReviewRelic_Tests";
@@ -310,12 +340,12 @@
 		};
 		A62CA5EA3C7CB55104A48B88C2CF9241 /* ReviewRelic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 924507D67079046075B88724F89B0542 /* Build configuration list for PBXNativeTarget "ReviewRelic" */;
+			buildConfigurationList = E4102071548AC61CB72B397ED796245A /* Build configuration list for PBXNativeTarget "ReviewRelic" */;
 			buildPhases = (
-				5EF61487C1AFFCA6907A03C8A1D713A7 /* Headers */,
-				5241871D8E5A6100A326A95643EAB2F5 /* Sources */,
-				7041AF444C24608C18E99B6FCAC824C0 /* Frameworks */,
-				04C3CE04689B01B376591BA9F21F79DB /* Resources */,
+				2E8011DFEC1DFBF00EEDB61826392C56 /* Headers */,
+				94259A0EFB913CF631D953097DEB4B3A /* Sources */,
+				CA823BC7ECD4901BB38C24EC1C2BB0FA /* Frameworks */,
+				BA4BE46158475C88FA52A3075CA1F1C8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -338,7 +368,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA023DF4F7521B16FD2733935D7D470E /* PBXTargetDependency */,
+				1A61C6B340C16461E6BEDEC6E46D3865 /* PBXTargetDependency */,
 			);
 			name = "Pods-ReviewRelic_Example";
 			productName = "Pods-ReviewRelic_Example";
@@ -375,18 +405,18 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04C3CE04689B01B376591BA9F21F79DB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A623548EB73E0EA8B124B01A26FA9F9 /* RRAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		163A61AA0CC960C66E0F240CCF40ACD9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4BE46158475C88FA52A3075CA1F1C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663D5BBFB42A4926EFAA561B8ED8178A /* RRAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,26 +438,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5241871D8E5A6100A326A95643EAB2F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				53395B952D1DAC6F47D4826860B8FBCA /* AlignedCollectionViewFlowLayout.swift in Sources */,
-				7D767A80A50372C1B5F4F8B5F967AD9F /* ReviewRelic-dummy.m in Sources */,
-				120A8DBEC6C0BF7AA87927BB09F1180C /* ReviewRelic.swift in Sources */,
-				9451E4B041857BE577C7ADAB21BE0B88 /* ReviewRelicInteractor.swift in Sources */,
-				98BD28FA705538D139F333B84192EC55 /* ReviewRelicModels.swift in Sources */,
-				BFA9A8A340F8D1EB9E515E10B3C6F7D0 /* ReviewRelicPresenter.swift in Sources */,
-				2DD0019DC3C46FAFC56A254C57CA3ECF /* ReviewRelicViewController.swift in Sources */,
-				7EFC415ACF9CD07C64B5E73A41F01ECA /* ReviewRelicViewController.xib in Sources */,
-				1043EF2EBD4BCFEDFEFC07CC731AE9A5 /* ReviewRelicWorker.swift in Sources */,
-				617F4CD5B13BFA72D550CAB918B5005A /* RRHelpers.swift in Sources */,
-				2945DE3837881C756872C76031A4D946 /* RRUITextView.swift in Sources */,
-				754667AD7C60313033B081753FC4CC35 /* WordsCollectionViewCell.swift in Sources */,
-				E2CD2CDF64275D72C1BB14EEB7254670 /* WordsCollectionViewCell.xib in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6DA2F4A029F7814855CA3ED0C6E65853 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,20 +446,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94259A0EFB913CF631D953097DEB4B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887F0311EB799CC70DB9856B4389742A /* AlignedCollectionViewFlowLayout.swift in Sources */,
+				A1D02A227456005683080EA97A2AB345 /* ReviewRelic-dummy.m in Sources */,
+				8CE918EE1F1BFEA82E9A6612C863F3CD /* ReviewRelic.swift in Sources */,
+				314DD4197C88E12F9B6A82E3DBCA1E3F /* ReviewRelicInteractor.swift in Sources */,
+				B44A0F802524311E6C31A211A21890DE /* ReviewRelicModels.swift in Sources */,
+				6E8CCB30820676E258699537C2E10F3D /* ReviewRelicPresenter.swift in Sources */,
+				96AF6A4CC8951CA5E06A64F3A2F6CC75 /* ReviewRelicViewController.swift in Sources */,
+				F2D3C8AAD32C79FD457B8FD45A786022 /* ReviewRelicViewController.xib in Sources */,
+				0B9F814D9D49198B0967A782C04947D0 /* ReviewRelicWorker.swift in Sources */,
+				DA264B55B58FC6A00652CB9CB216CF32 /* RRHelpers.swift in Sources */,
+				1409CF6B7979BE337F44DF733D161953 /* RRNetwork.swift in Sources */,
+				EF85F93893683EACC723952B1D990264 /* RRUITextView.swift in Sources */,
+				0779C665270CE19BE00DC0ADE101B9D7 /* WordsCollectionViewCell.swift in Sources */,
+				3BC2D78FBD7F5E98E6E176C675DE25F8 /* WordsCollectionViewCell.xib in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F49B6231F2690998BECC6B13189D181 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ReviewRelic_Example";
-			target = DB8024995482C4D5BD918CA7E0ACD4AF /* Pods-ReviewRelic_Example */;
-			targetProxy = CB9F4291F4A1DF4DA6B4E41A16AECDD3 /* PBXContainerItemProxy */;
-		};
-		EA023DF4F7521B16FD2733935D7D470E /* PBXTargetDependency */ = {
+		1A61C6B340C16461E6BEDEC6E46D3865 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ReviewRelic;
 			target = A62CA5EA3C7CB55104A48B88C2CF9241 /* ReviewRelic */;
-			targetProxy = 6D15257DA79849512228811DCE8C6005 /* PBXContainerItemProxy */;
+			targetProxy = 6E5307CCFC7FB3534AAB867E7B5F8BF8 /* PBXContainerItemProxy */;
+		};
+		6675DAD5E5FE78A4AEEB94E97FBCA52C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ReviewRelic_Example";
+			target = DB8024995482C4D5BD918CA7E0ACD4AF /* Pods-ReviewRelic_Example */;
+			targetProxy = 6620AD5468BBD53F4AEF65A7D11ABBEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,39 +655,6 @@
 			};
 			name = Release;
 		};
-		56E91E92134045129325509A8AE5E039 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AEE9542795ADFBC2876371472CB230F /* ReviewRelic.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ReviewRelic/ReviewRelic-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReviewRelic/ReviewRelic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReviewRelic/ReviewRelic.modulemap";
-				PRODUCT_MODULE_NAME = ReviewRelic;
-				PRODUCT_NAME = ReviewRelic;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -753,9 +751,42 @@
 			};
 			name = Debug;
 		};
-		DE132EEF3C30EF8A7E509A55572C8DD5 /* Debug */ = {
+		F55BC7649D870D2F369F24CCBC35AA15 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2391E9EB3BEDD243876A2A745F877250 /* ReviewRelic.debug.xcconfig */;
+			baseConfigurationReference = 158567133A6381BC7A0BA0D8AE6029F5 /* ReviewRelic.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReviewRelic/ReviewRelic-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReviewRelic/ReviewRelic-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReviewRelic/ReviewRelic.modulemap";
+				PRODUCT_MODULE_NAME = ReviewRelic;
+				PRODUCT_NAME = ReviewRelic;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDC4AB0FC5C2B938791C74CAF85C85A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8661403121484BBB1FA4C14F5008B3D /* ReviewRelic.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -806,20 +837,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		924507D67079046075B88724F89B0542 /* Build configuration list for PBXNativeTarget "ReviewRelic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE132EEF3C30EF8A7E509A55572C8DD5 /* Debug */,
-				56E91E92134045129325509A8AE5E039 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BA0BB210A99CADCE2A929B0E9BD05062 /* Build configuration list for PBXNativeTarget "Pods-ReviewRelic_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1347144FBF2B77758CD2FC9DB118901A /* Debug */,
 				5320099F78BE00B69BE82FEB766E0C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4102071548AC61CB72B397ED796245A /* Build configuration list for PBXNativeTarget "ReviewRelic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC4AB0FC5C2B938791C74CAF85C85A0 /* Debug */,
+				F55BC7649D870D2F369F24CCBC35AA15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

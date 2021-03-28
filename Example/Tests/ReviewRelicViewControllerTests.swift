@@ -38,26 +38,46 @@ class ReviewRelicViewControllerTests: XCTestCase {
     }
 
     // MARK: Tests
+    
     func testSubmitRequest() throws {
         
         let spy = ReviewRelicInteractorSpy()
         sut.interactor = spy
         let button = UIButton()
-        button.tag = 4
+        let viewModel =
+            ReviewRelicModels.ViewModel.init(
+                ratingType: .stars(.init(starsCount: 5, starSelected: UIImage(), starUnSelected: UIImage())),
+                themeColor: .black,
+                appLogo: UIImage()
+            )
+        sut.viewModel = viewModel
+        sut.rating = 1
         sut.submitAction(button)
-        XCTAssertTrue(spy.submitDataCalled, "Submit rating is not working")
+        XCTAssertTrue(spy.submitDataCalled, "ViewModel not found probaboy")
+    }
+    
+    
+    func testrequestReviewData() throws {
+        
+        let spy = ReviewRelicInteractorSpy()
+        sut.interactor = spy
+        sut.requestData()
+        XCTAssertTrue(spy.requestReviewDataCalled, "Data is not requested")
     }
     
     // MARK: Test Spies
     
     class ReviewRelicInteractorSpy: ReviewRelicBusinessLogic {
-        var submitDataCalled = false
-        func fetchData() {
-            
+        var requestReviewDataCalled = false
+        func requestReviewData() {
+            requestReviewDataCalled = true
         }
         
+        var submitDataCalled = false
         func submitData(request: ReviewRelicModels.Request) {
             submitDataCalled = true
         }
+        
+        
     }
 }

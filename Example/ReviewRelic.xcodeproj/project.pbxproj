@@ -14,7 +14,11 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		684E4B623C07602D696A1B8D /* Pods_ReviewRelic_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C3024E71837C2CD5AEC596 /* Pods_ReviewRelic_Example.framework */; };
 		861CBCD622C423226FD3F19B /* Pods_ReviewRelic_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B235575C7D2598B4124043D2 /* Pods_ReviewRelic_Tests.framework */; };
+		9F2A2A3726110C8700947D25 /* ReviewRelicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A2A3626110B0200947D25 /* ReviewRelicData.swift */; };
 		9F6AFBD025F6D4390041061D /* ReviewRelicViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AFBCF25F6D4390041061D /* ReviewRelicViewControllerTests.swift */; };
+		9F96A9A526111E9C00B5B9B6 /* ReviewRelicInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A2A29260F1F0F00947D25 /* ReviewRelicInteractorTests.swift */; };
+		9F96A9A626111E9C00B5B9B6 /* ReviewRelicWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A2A2A260F1F0F00947D25 /* ReviewRelicWorkerTests.swift */; };
+		9F96A9A726111E9C00B5B9B6 /* ReviewRelicPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A2A2B260F1F0F00947D25 /* ReviewRelicPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		607FACE51AFB9204008FA782 /* ReviewRelic_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviewRelic_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852BA4A171305D34835DC858 /* ReviewRelic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ReviewRelic.podspec; path = ../ReviewRelic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F2A2A29260F1F0F00947D25 /* ReviewRelicInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicInteractorTests.swift; sourceTree = "<group>"; };
+		9F2A2A2A260F1F0F00947D25 /* ReviewRelicWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicWorkerTests.swift; sourceTree = "<group>"; };
+		9F2A2A2B260F1F0F00947D25 /* ReviewRelicPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicPresenterTests.swift; sourceTree = "<group>"; };
+		9F2A2A3626110B0200947D25 /* ReviewRelicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicData.swift; sourceTree = "<group>"; };
 		9F6AFBCE25F6D4380041061D /* ReviewRelic_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F6AFBCF25F6D4390041061D /* ReviewRelicViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRelicViewControllerTests.swift; sourceTree = "<group>"; };
 		B235575C7D2598B4124043D2 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
-				9F6AFBCF25F6D4390041061D /* ReviewRelicViewControllerTests.swift */,
 				9F6AFBCE25F6D4380041061D /* ReviewRelic_Tests-Bridging-Header.h */,
+				9F2A2A3626110B0200947D25 /* ReviewRelicData.swift */,
+				9F6AFBCF25F6D4390041061D /* ReviewRelicViewControllerTests.swift */,
+				9F2A2A29260F1F0F00947D25 /* ReviewRelicInteractorTests.swift */,
+				9F2A2A2A260F1F0F00947D25 /* ReviewRelicWorkerTests.swift */,
+				9F2A2A2B260F1F0F00947D25 /* ReviewRelicPresenterTests.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -342,7 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F96A9A526111E9C00B5B9B6 /* ReviewRelicInteractorTests.swift in Sources */,
+				9F96A9A626111E9C00B5B9B6 /* ReviewRelicWorkerTests.swift in Sources */,
+				9F96A9A726111E9C00B5B9B6 /* ReviewRelicPresenterTests.swift in Sources */,
 				9F6AFBD025F6D4390041061D /* ReviewRelicViewControllerTests.swift in Sources */,
+				9F2A2A3726110C8700947D25 /* ReviewRelicData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
