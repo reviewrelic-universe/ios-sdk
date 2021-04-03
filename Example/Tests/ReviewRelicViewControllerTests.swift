@@ -68,16 +68,17 @@ class ReviewRelicViewControllerTests: XCTestCase {
     // MARK: Test Spies
     
     class ReviewRelicInteractorSpy: ReviewRelicBusinessLogic {
+        
+        
         var requestReviewDataCalled = false
+        var submitDataCalled = false
+        
         func requestReviewData() {
             requestReviewDataCalled = true
         }
         
-        var submitDataCalled = false
-        func submitData(request: ReviewRelicModels.Request) {
+        func submitData(request: ReviewRelicModels.Request, completion: (() -> ())?) {
             submitDataCalled = true
         }
-        
-        
     }
 }

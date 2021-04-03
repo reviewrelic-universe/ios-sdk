@@ -8,7 +8,8 @@
 import Foundation
 
 public protocol ReviewRelicItem {
-    var sku: String {get set}
+    var transectionId: String { get set }
+    var reviewsId: String? {get set}
 }
 
 
@@ -19,14 +20,23 @@ struct ReviewRelicData {
 
 public class ReviewRelic {
     
-    public static let shared : ReviewRelic = ReviewRelic()
+    
+    /// Enable logging
     public var isLogginEnabled = true
     
+    ///you can add user identifier using this param. This parameter will go with every reivew
+    public var reviewerId: String?
+    
+    /// Use this single point to change any settings
+    public static let shared : ReviewRelic = ReviewRelic()
+
     let bundle = Bundle(for: ReviewRelic.self)
     var apiKey: String!
+    var appSecret: String!
     
-    public func initialize(apiKey: String) {
+    public func initialize(apiKey: String, appSecret: String) {
         self.apiKey = apiKey
+        self.appSecret = appSecret
         getSettings()
     }
     
@@ -42,9 +52,10 @@ public class ReviewRelic {
 }
 
 public extension UIViewController {
-    func presentReviewRelic(item: ReviewRelicItem, completion: (() -> Void)? = nil) {
+    func presentReviewRelic(item: ReviewRelicItem, completion: (() -> Void)? = nil) -> ReviewRelicViewController {
         let controller = ReviewRelicViewController.instanceFromNib()
         present(controller, animated: true, completion: completion)
+        return controller
     }
 }
 

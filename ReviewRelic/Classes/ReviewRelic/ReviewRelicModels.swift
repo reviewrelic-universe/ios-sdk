@@ -11,7 +11,24 @@ import UIKit
 enum ReviewRelicModels {
     
     struct Request {
-        let rating: Int?
+        let rating: Int
+        let itemId: String
+        let comments: String
+    }
+    
+    struct WorkerRequest {
+        let hmac: String
+        let timeStamp: Int
+        let request: Request
+        
+        init(request: Request, time: Int? = nil) {
+            self.request = request
+            timeStamp = time ?? Int(Date().addingTimeInterval(300).timeIntervalSince1970)
+            let signature = """
+{"transaction-id":"\(request.itemId)","rating":\(request.rating),"time":\(timeStamp)}
+"""
+            hmac = signature.hmac(algorithm: .SHA256, key: ReviewRelic.shared.appSecret)
+        }
     }
     
     struct Response: Codable {

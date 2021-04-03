@@ -59,6 +59,11 @@ extension UIView {
         self.clipsToBounds = true
     }
     
+    func setRoundedFull() {
+        self.layer.cornerRadius = self.frame.size.width/2;
+        self.clipsToBounds = true;
+    }
+    
     func shake() {
         self .shake(8, direction:1, currentTimes:0, delta: 8, interval: 0.03, shakeDirection: .horizontal)
     }
@@ -145,29 +150,6 @@ extension UIColor {
         }
     }
     
-    struct General {
-        static let BlueColor: UIColor = UIColor(r: 1, g: 177, b: 242, a: 1)
-        static let GreenColor: UIColor = UIColor(r: 25, g: 174, b: 68, a: 1)
-        static let YellowColor: UIColor = UIColor(r: 255, g: 251, b: 213, a: 1)
-        static let RedColor: UIColor = UIColor(r: 255, g: 59, b: 48, a: 1)
-        
-        static let GrayColor: UIColor = UIColor(r: 40, g: 46, b: 57, a: 1)
-        static let PurpleColor: UIColor = UIColor(r: 141, g: 119, b: 173, a: 1)
-        static let LightPurpleColor: UIColor = UIColor(r: 157, g: 142, b: 183, a: 1)
-        
-        static let OrangeColor: UIColor = UIColor(r: 255, g: 121, b: 62, a: 1)
-        static let OrangeColorTint: UIColor = UIColor(r: 223, g: 133, b: 85, a: 1)
-        
-        static let DarkGreenColor: UIColor = UIColor(r: 26, g: 37, b: 45, a: 1)
-        static let TurqoiseColor: UIColor = UIColor(r: 23, g: 182, b: 196, a: 1)
-        
-        static let GreyColor: UIColor = UIColor(r: 141, g: 141, b: 141, a: 1)
-        static let GoldColor: UIColor = UIColor(r: 250, g: 160, b: 37, a: 1)
-        
-        static let DarkGrayColor: UIColor = UIColor(r: 73, g: 73, b: 73, a: 1)
-        static let LightGrayColor: UIColor = UIColor(r: 200, g: 200, b: 200, a: 1)
-        static let OffWhite: UIColor = UIColor(r: 245, g: 245, b: 245, a: 1)
-        
-        static let NavyBlue: UIColor = UIColor(r: 22, g: 22, b: 41, a: 1)
-    }
+    static let borderColor = UIColor.lightGray.withAlphaComponent(0.3)
+
 }

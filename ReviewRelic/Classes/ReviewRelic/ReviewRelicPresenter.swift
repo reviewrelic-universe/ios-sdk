@@ -11,6 +11,8 @@ import UIKit
 protocol ReviewRelicPresentationLogic {
     func presentData(response: ReviewRelicModels.Response)
     func presentDataFailure()
+    func presentDataSubmittedSuccessfully()
+    func presentDataNotSubmitted()
 }
 
 class ReviewRelicPresenter: ReviewRelicPresentationLogic {
@@ -19,7 +21,15 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
     
     // MARK: Present
     
+    func presentDataSubmittedSuccessfully() {
+        
+    }
+
     func presentDataFailure() {
+        
+    }
+    
+    func presentDataNotSubmitted() {
         
     }
     

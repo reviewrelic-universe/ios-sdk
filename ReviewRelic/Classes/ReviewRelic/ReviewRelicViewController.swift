@@ -13,11 +13,15 @@ protocol ReviewRelicDisplayLogic: class {
     func displayFailureData()
 }
 
-class ReviewRelicViewController: UIViewController {
+public class ReviewRelicViewController: UIViewController {
     
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var shareYourExperienceLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!{
+        didSet{
+            logoImageView.setRoundedFull()
+        }
+    }
+    @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsStackView: UIStackView!
     @IBOutlet weak var commentTextView: RRUITextView!
     @IBOutlet weak var wordsCollectionViewHeight: NSLayoutConstraint!
@@ -34,7 +38,12 @@ class ReviewRelicViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!{
+        didSet{
+            submitButton.setRoundedCorner(radius: 22)
+        }
+    }
+    
     @IBOutlet weak var closeButton: UIButton!{
         didSet{
             closeButton.setRoundedCorner(radius: 15)
@@ -69,6 +78,19 @@ class ReviewRelicViewController: UIViewController {
         setup()
     }
     
+    
+    public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = .darkText) {
+        headingLabel.text = text
+        headingLabel.font = font
+        headingLabel.textColor = textColor
+    }
+    
+    public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = .darkText) {
+        descriptionLabel.text = text
+        descriptionLabel.font = font
+        descriptionLabel.textColor = textColor
+    }
+    
     // MARK: Setup
     
     private func setup() {
@@ -82,10 +104,10 @@ class ReviewRelicViewController: UIViewController {
     
     // MARK: View lifecycle
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        
+                
         NotificationCenter.default.addObserver(
             forName: .UIKeyboardWillShow,
             object: nil,
@@ -94,7 +116,7 @@ class ReviewRelicViewController: UIViewController {
             guard let info:Dictionary = (notification as NSNotification).userInfo, let strongSelf = self else { return }
             let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! Double)
             
-            strongSelf.mainStackViewCenterConstraint.constant = -120
+            strongSelf.mainStackViewCenterConstraint.constant = -160
             strongSelf.view.animateAfterConstraintChangeDuration(seconds: duration)
         }
         
@@ -105,13 +127,13 @@ class ReviewRelicViewController: UIViewController {
             guard let info:Dictionary = (notification as NSNotification).userInfo, let strongSelf = self else { return }
             let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! Double)
             
-            strongSelf.mainStackViewCenterConstraint.constant = 0
+            strongSelf.mainStackViewCenterConstraint.constant = -40
             strongSelf.view.animateAfterConstraintChangeDuration(seconds: duration)
         }
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
@@ -130,7 +152,6 @@ extension ReviewRelicViewController {
     
     @IBAction func submitAction(_ sender: UIButton) {
     
-        sender.isEnabled = false
         guard let viewModel = viewModel else { return }
         
         switch viewModel.ratingType {
@@ -139,13 +160,16 @@ extension ReviewRelicViewController {
                 starsStackView.shake()
                 return
             }
-        case .words(let wordsData):
-            self.words = wordsData.words
-            break
+        case .words(_):
+            if rating == 0 {
+                wordsCollectionView.shake()
+                return
+            }
         }
-        
-        let request = ReviewRelicModels.Request(rating: rating)
-        interactor?.submitData(request: request)
+
+        let comment = commentTextView == nil ? "" : commentTextView.text!
+        let request = ReviewRelicModels.Request(rating: rating, itemId: "11", comments: comment)
+        interactor?.submitData(request: request, completion: nil)
         
     }
     
@@ -177,9 +201,9 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
         closeButton.tintColor = viewModel.themeColor
         
         submitButton.setBackgroundImage(viewModel.themeColor.image(), for: .normal)
-        submitButton.setRoundedCorner(radius: 6)
         submitButton.setTitle("Submit", for: .normal)
         submitButton.setTitleColor(.white, for: .normal)
+
         switch viewModel.ratingType {
         
         case .stars(let starsData):
@@ -215,23 +239,23 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
 }
 
 extension ReviewRelicViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         words.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordsCollectionViewCell", for: indexPath) as! WordsCollectionViewCell
         cell.themeColor = viewModel?.themeColor ?? .lightGray
-        cell.wordLabel.text = words[indexPath.row].title
-        cell.wordLabel.font = UIFont.systemFont(ofSize: 14)
-        cell.containerView.setBorder(color: UIColor.lightGray.withAlphaComponent(0.3), width: 0.8)
-        cell.containerView.setRoundedCorner(radius: 18)
-        
+        cell.wordLabel.text = words[indexPath.row].title        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        rating = words[indexPath.row].rating
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width = words[indexPath.row].title.width(withConstrainedHeight: 36, font: UIFont.systemFont(ofSize: 14)) + 32
         return CGSize(width: width, height: 36)

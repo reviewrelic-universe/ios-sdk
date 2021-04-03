@@ -22,6 +22,7 @@
 		887F0311EB799CC70DB9856B4389742A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */; };
 		8CE918EE1F1BFEA82E9A6612C863F3CD /* ReviewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEB4D56D403867DF6FAA6B2D591D99 /* ReviewRelic.swift */; };
 		96AF6A4CC8951CA5E06A64F3A2F6CC75 /* ReviewRelicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52A09576EB9B1181211BFD090C923A /* ReviewRelicViewController.swift */; };
+		9F96A9AB2611297200B5B9B6 /* SHAEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96A9AA2611297200B5B9B6 /* SHAEncryption.swift */; };
 		A1D02A227456005683080EA97A2AB345 /* ReviewRelic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC18E073E7A8AFFA8A445B17F812871B /* ReviewRelic-dummy.m */; };
 		B036596B7E952EBAB34E91E50D71DE7F /* Pods-ReviewRelic_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FAF9C980361D36233A9174D30D62FEF /* Pods-ReviewRelic_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B44A0F802524311E6C31A211A21890DE /* ReviewRelicModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE8F8151C2C13018C9C0DA2244D7AE /* ReviewRelicModels.swift */; };
@@ -62,13 +63,13 @@
 		30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		353DFCE57D83BDBD29928C3FE63A56DF /* ReviewRelicViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ReviewRelicViewController.xib; sourceTree = "<group>"; };
 		3D52A09576EB9B1181211BFD090C923A /* ReviewRelicViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicViewController.swift; sourceTree = "<group>"; };
-		42F7D2D5E8E0CABC171A6D096DCE478A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		42F7D2D5E8E0CABC171A6D096DCE478A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4E5347B226F40647CB7F2AB876BE39B6 /* Pods-ReviewRelic_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReviewRelic_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5B37B3461C1B14558B6EFB1D8E181118 /* Pods-ReviewRelic_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReviewRelic_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		616B6D631852D7899D9CE79DFA360C61 /* Pods-ReviewRelic_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		620AEFDFAC5050B52166629832AA0276 /* Pods-ReviewRelic_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Example-dummy.m"; sourceTree = "<group>"; };
 		6218BA2D72461D0B4537F11162DDD3ED /* RRUITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RRUITextView.swift; sourceTree = "<group>"; };
-		69D9FD5C2B6BE335C2816A200D871E64 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		69D9FD5C2B6BE335C2816A200D871E64 /* ReviewRelic.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ReviewRelic.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6CFED73B390D568D99D6C2FDE402F620 /* Pods-ReviewRelic_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReviewRelic_Tests-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73FC22802AA661FEDD3379F752D71EB3 /* Pods-ReviewRelic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,22 +81,23 @@
 		84FEB4D56D403867DF6FAA6B2D591D99 /* ReviewRelic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewRelic.swift; path = ReviewRelic/Classes/ReviewRelic.swift; sourceTree = "<group>"; };
 		8671514A35304B99F71004F297D7B1BA /* ReviewRelic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-prefix.pch"; sourceTree = "<group>"; };
 		8D0040AAA4317D7AB6394AA72D6197DF /* Pods-ReviewRelic_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8F7AB90C79324F25355B74530316A7FC /* Pods_ReviewRelic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Example.framework; path = "Pods-ReviewRelic_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9211FEDC23935CCF55C85CCD610A6168 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReviewRelic_Tests.framework; path = "Pods-ReviewRelic_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F7AB90C79324F25355B74530316A7FC /* Pods_ReviewRelic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9211FEDC23935CCF55C85CCD610A6168 /* Pods_ReviewRelic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewRelic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B1361CC422C3B37790F4E08278BED9 /* Pods-ReviewRelic_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReviewRelic_Example-frameworks.sh"; sourceTree = "<group>"; };
 		98899B92AE682D0A6690F6B5C118F97A /* ReviewRelic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReviewRelic-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F96A9AA2611297200B5B9B6 /* SHAEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAEncryption.swift; sourceTree = "<group>"; };
 		A46EC357DB6558044D888180DE202281 /* ReviewRelicInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicInteractor.swift; sourceTree = "<group>"; };
 		B8661403121484BBB1FA4C14F5008B3D /* ReviewRelic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReviewRelic.debug.xcconfig; sourceTree = "<group>"; };
 		BC18E073E7A8AFFA8A445B17F812871B /* ReviewRelic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReviewRelic-dummy.m"; sourceTree = "<group>"; };
-		C3926A33332D94BA1780B39F718DFBC7 /* ReviewRelic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReviewRelic.framework; path = ReviewRelic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3926A33332D94BA1780B39F718DFBC7 /* ReviewRelic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReviewRelic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0E33519884A0C6A0BB1D9570B10EE9 /* ReviewRelicWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewRelicWorker.swift; sourceTree = "<group>"; };
 		DA3949D222F2CD2F98314BC5C13FC82B /* ReviewRelic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReviewRelic.modulemap; sourceTree = "<group>"; };
 		E95BEAD947A371188DFB5B28ABA9BEB3 /* Pods-ReviewRelic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReviewRelic_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F014331295B78035A1430D9ED42C7959 /* WordsCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = WordsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F06E5C81B6C9FA2DA51A780A9CA73593 /* RRNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RRNetwork.swift; sourceTree = "<group>"; };
 		F092734ADCB1BC224B3E563216AB22A8 /* Pods-ReviewRelic_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReviewRelic_Example-Info.plist"; sourceTree = "<group>"; };
-		F42F970A2C55455D6B8F278376F67ACD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F42F970A2C55455D6B8F278376F67ACD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				30E82E0C8609F61ACC9AD930A2D642A1 /* AlignedCollectionViewFlowLayout.swift */,
 				0391924BA6EF24D3A17FF95581883669 /* RRHelpers.swift */,
 				F06E5C81B6C9FA2DA51A780A9CA73593 /* RRNetwork.swift */,
+				9F96A9AA2611297200B5B9B6 /* SHAEncryption.swift */,
 				6218BA2D72461D0B4537F11162DDD3ED /* RRUITextView.swift */,
 			);
 			name = Helpers;
@@ -463,6 +466,7 @@
 				1409CF6B7979BE337F44DF733D161953 /* RRNetwork.swift in Sources */,
 				EF85F93893683EACC723952B1D990264 /* RRUITextView.swift in Sources */,
 				0779C665270CE19BE00DC0ADE101B9D7 /* WordsCollectionViewCell.swift in Sources */,
+				9F96A9AB2611297200B5B9B6 /* SHAEncryption.swift in Sources */,
 				3BC2D78FBD7F5E98E6E176C675DE25F8 /* WordsCollectionViewCell.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,8 +714,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

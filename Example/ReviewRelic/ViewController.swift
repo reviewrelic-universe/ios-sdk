@@ -22,12 +22,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openReviewForm(){
-        presentReviewRelic(item: Item()) {
+        let controller = presentReviewRelic(item: Item()) {
             
         }
+        
+        controller.setHeadingLabel(text: "This is the text being set from app", textColor: .purple)
+        controller.setDescriptionLabel(text: "This is a multiline text.\n This is a multiline text.\nThis is a multiline text.\n.", textColor: UIColor.purple.withAlphaComponent(0.7))
     }
 }
 
 struct Item: ReviewRelicItem {
-    var sku = "kungfu"
+    var transectionId: String = "32"
+    var reviewsId: String? = nil
 }
