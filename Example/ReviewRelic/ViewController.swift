@@ -26,8 +26,10 @@ class ViewController: UIViewController {
             
         }
         
-        controller.setHeadingLabel(text: "This is the text being set from app", textColor: .purple)
-        controller.setDescriptionLabel(text: "This is a multiline text.\n This is a multiline text.\nThis is a multiline text.\n.", textColor: UIColor.purple.withAlphaComponent(0.7))
+        
+        let color = UIColor(red: 237/255.0, green: 100/255.0, blue: 166/255.0, alpha: 1)
+        controller.setHeadingLabel(text: "Please share you experience", font: .boldSystemFont(ofSize: 17), textColor: color)
+        controller.setDescriptionLabel(text: "How did you like the last order from our Restaurant. Please leave us a review.", textColor: UIColor.black.withAlphaComponent(0.4))
     }
 }
 

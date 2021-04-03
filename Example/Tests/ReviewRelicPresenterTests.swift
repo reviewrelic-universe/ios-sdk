@@ -42,21 +42,79 @@ class ReviewRelicPresenterTests: XCTestCase
     // MARK: Test doubles
     
     class ReviewRelicDisplayLogicSpy: ReviewRelicDisplayLogic {
-        var displayFailureDataCalled = false
-        func displayFailureData() {
-            displayFailureDataCalled = true
-        }
-        
         
         var displayDataCalled = false
-        
-        func displayData(viewModel: ReviewRelicModels.ViewModel){
+        func displayData(viewModel: ReviewRelicModels.ViewModel) {
             displayDataCalled = true
         }
+        
+        var displayDataSubmittedSuccessfullyCalled = false
+        func displayDataSubmittedSuccessfully() {
+            displayDataSubmittedSuccessfullyCalled = true
+        }
+        
+        var displayDataFailureCalled = false
+        func displayDataFailure() {
+            displayDataFailureCalled = true
+        }
+        
+        var displayDataSubmittedFailedCalled = false
+        func displayDataSubmittedFailed() {
+            displayDataSubmittedFailedCalled = true
+        }
+    
     }
     
     // MARK: Tests
+    
+    func asynExpectation(execute:(()->Void)){
+        let expectation = XCTestExpectation(description: "")
+        execute()
+        Timer.scheduledTimer(withTimeInterval: 0.001, repeats: false) { (_) in
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.0011)
+
+    }
+    
+    func testPresentDataFailure(){
+        let spy = ReviewRelicDisplayLogicSpy()
+        sut.viewController = spy
+        
+        asynExpectation {
+            sut.presentDataFailure()
+        }
+        
+        XCTAssertTrue(spy.displayDataFailureCalled, "Data not presented")
+
+    }
+    
+    func testPresentDataSubmittedSuccessfully(){
+        let spy = ReviewRelicDisplayLogicSpy()
+        sut.viewController = spy
+        
+        asynExpectation {
+            sut.presentDataSubmittedSuccessfully()
+        }
+        
+        XCTAssertTrue(spy.displayDataSubmittedSuccessfullyCalled, "Data not presented")
+
+    }
+    
+    func testPresentDataSubmittedFailed(){
+        let spy = ReviewRelicDisplayLogicSpy()
+        sut.viewController = spy
+        
+        asynExpectation {
+            sut.presentDataSubmittedFailed()
+        }
+        
+        XCTAssertTrue(spy.displayDataSubmittedFailedCalled, "Data not presented")
+
+    }
+    
     func testDataPresentaiton() {
+        
         guard
             let data = ReviewRelicTestsData.StarBasedRatingJson.data(using: .utf8),
             let response = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: data) else {
@@ -67,9 +125,11 @@ class ReviewRelicPresenterTests: XCTestCase
     
         let spy = ReviewRelicDisplayLogicSpy()
         sut.viewController = spy
-
-        sut.presentData(response: response)
-        // Then
+        
+        asynExpectation {
+            sut.presentData(response: response)
+        }
+        
         XCTAssertTrue(spy.displayDataCalled, "Display data not called")
     }
 }

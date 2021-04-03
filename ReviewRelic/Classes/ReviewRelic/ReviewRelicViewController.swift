@@ -10,7 +10,9 @@ import UIKit
 
 protocol ReviewRelicDisplayLogic: class {
     func displayData(viewModel: ReviewRelicModels.ViewModel)
-    func displayFailureData()
+    func displayDataFailure()
+    func displayDataSubmittedSuccessfully()
+    func displayDataSubmittedFailed()
 }
 
 public class ReviewRelicViewController: UIViewController {
@@ -20,6 +22,7 @@ public class ReviewRelicViewController: UIViewController {
             logoImageView.setRoundedFull()
         }
     }
+    @IBOutlet weak var resultView: RRResultView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsStackView: UIStackView!
@@ -38,7 +41,7 @@ public class ReviewRelicViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var submitButton: UIButton!{
+    @IBOutlet weak var submitButton: RRButton!{
         didSet{
             submitButton.setRoundedCorner(radius: 22)
         }
@@ -170,7 +173,7 @@ extension ReviewRelicViewController {
         let comment = commentTextView == nil ? "" : commentTextView.text!
         let request = ReviewRelicModels.Request(rating: rating, itemId: "11", comments: comment)
         interactor?.submitData(request: request, completion: nil)
-        
+        (sender as? RRButton)?.set(state: .loading)
     }
     
     @IBAction func closeAction(_ sender: UIButton) {
@@ -192,6 +195,28 @@ extension ReviewRelicViewController {
 
 // Display
 extension ReviewRelicViewController: ReviewRelicDisplayLogic {
+
+    
+    func displayDataFailure() {
+        view.bringSubview(toFront: resultView)
+        resultView.showWithAnimation()
+        resultView.show(kind: .failure, themeColor: .lightText)
+        dismiss()
+    }
+    
+    func displayDataSubmittedFailed() {
+        view.bringSubview(toFront: resultView)
+        resultView.showWithAnimation()
+        resultView.show(kind: .failure, themeColor: .lightText)
+        dismiss()
+    }
+    
+    func displayDataSubmittedSuccessfully() {
+        view.bringSubview(toFront: resultView)
+        resultView.showWithAnimation()
+        resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .black)
+        dismiss()
+    }
    
     func displayData(viewModel: ReviewRelicModels.ViewModel) {
         
@@ -216,8 +241,10 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
         }
     }
     
-    func displayFailureData() {
-        
+    func dismiss(){
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self](_) in
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
     
     private func setupStarsReview(starsData: ReviewRelicModels.ViewModel.StarsData ){
@@ -261,3 +288,34 @@ extension ReviewRelicViewController: UICollectionViewDelegate, UICollectionViewD
         return CGSize(width: width, height: 36)
     }
 }
+
+class RRResultView: UIView {
+    
+    @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!{
+        didSet{
+            resultLabel.font = .boldSystemFont(ofSize: 18)
+            resultLabel.textColor = .darkText
+        }
+    }
+    
+    enum Kind {
+        case success
+        case failure
+    }
+    
+    func show(kind:Kind, themeColor: UIColor) {
+        switch kind {
+        case .success:
+            resultImageView.image = UIImage(namedInBundle: "successTick")
+            resultLabel.text = "Review submitted successfully!"
+            resultImageView.tintColor = themeColor
+            resultLabel.textColor = themeColor
+        case .failure:
+            resultImageView.image = UIImage(namedInBundle: "failureIcon")
+            resultLabel.text = "Oops!\nSomething went wrong"
+            resultImageView.tintColor = .darkText
+        }
+    }
+}
+

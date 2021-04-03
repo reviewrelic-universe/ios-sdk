@@ -12,7 +12,7 @@ protocol ReviewRelicPresentationLogic {
     func presentData(response: ReviewRelicModels.Response)
     func presentDataFailure()
     func presentDataSubmittedSuccessfully()
-    func presentDataNotSubmitted()
+    func presentDataSubmittedFailed()
 }
 
 class ReviewRelicPresenter: ReviewRelicPresentationLogic {
@@ -22,15 +22,21 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
     // MARK: Present
     
     func presentDataSubmittedSuccessfully() {
-        
-    }
-
-    func presentDataFailure() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.displayDataSubmittedSuccessfully()
+        }
     }
     
-    func presentDataNotSubmitted() {
-        
+    func presentDataSubmittedFailed() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.displayDataSubmittedFailed()
+        }
+    }
+    
+    func presentDataFailure() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.displayDataFailure()
+        }
     }
     
     func presentData(response: ReviewRelicModels.Response) {
@@ -84,6 +90,8 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
                 appLogo: appLogo)
         }
         
-        viewController?.displayData(viewModel: viewModel)
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.displayData(viewModel: viewModel)
+        }
     }
 }

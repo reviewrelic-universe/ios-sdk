@@ -74,14 +74,14 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
                     
                 }else{
                     // save request for future
-                    self?.presenter?.presentDataNotSubmitted()
+                    self?.presenter?.presentDataSubmittedFailed()
                 }
                 
                 completion?()
                 
             }, failure: { [weak self] in
                 // save request for future
-                self?.presenter?.presentDataNotSubmitted()
+                self?.presenter?.presentDataSubmittedFailed()
                 completion?()
             })
         

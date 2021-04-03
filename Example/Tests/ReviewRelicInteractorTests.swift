@@ -49,24 +49,27 @@ class ReviewRelicInteractorTests: XCTestCase
     
     class ReviewRelicPresentationLogicSpy: ReviewRelicPresentationLogic {
         
-        func presentDataNotSubmitted(){
-            
-        }
-        
+        var presentDataSubmittedSuccessfullyCalled = false
+        var presentDataFailureCalled = false
         var dataPresentedCalled = false
+        var presentDataSubmittedFailedCalled = false
+        
         func presentData(response: ReviewRelicModels.Response){
             dataPresentedCalled = true
         }
         
-        var failurePresentedCalled = false
         func presentDataFailure(){
-            failurePresentedCalled = true
+            presentDataFailureCalled = true
         }
         
-        var presentDataSubmittedSuccessfullyCalled = false
         func presentDataSubmittedSuccessfully(){
             presentDataSubmittedSuccessfullyCalled = true
         }
+        
+        func presentDataSubmittedFailed(){
+            presentDataSubmittedFailedCalled = true
+        }
+        
     }
     
     
@@ -88,7 +91,6 @@ class ReviewRelicInteractorTests: XCTestCase
         
         let spy = ReviewRelicPresentationLogicSpy()
         sut.presenter = spy
-
         
         sut.submitData(request: request, completion: {
             expectation.fulfill()

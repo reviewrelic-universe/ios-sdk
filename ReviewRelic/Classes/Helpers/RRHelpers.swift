@@ -89,6 +89,40 @@ extension UIView {
         })
         
     }
+    
+    
+    func showActivityIndicator(color:UIColor = UIColor.gray) {
+        if self.viewWithTag(909) != nil {
+            return
+        }
+
+        let activityIndicator = UIActivityIndicatorView (activityIndicatorStyle: UIActivityIndicatorView.Style.white)
+        activityIndicator.tag = 909
+        activityIndicator.startAnimating()
+        activityIndicator.center = self.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = color
+        self.addSubview(activityIndicator)
+        activityIndicator.center = self.center
+    }
+    
+    func hideActivityIndicator() {
+        if let activityIndicator = self.viewWithTag(909) as? UIActivityIndicatorView {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    
+    func showWithAnimation() {
+        
+        guard isHidden else { return }
+        
+        self.alpha = 0;
+        self.isHidden = false
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.alpha = 1
+        })
+    }
 }
 
 enum ShakeDirection:Int {
@@ -151,5 +185,5 @@ extension UIColor {
     }
     
     static let borderColor = UIColor.lightGray.withAlphaComponent(0.3)
-
+    static let successGreen = UIColor(hex: 0x228B22)
 }

@@ -17,6 +17,7 @@
                 <outlet property="headingLabel" destination="ugC-op-3ko" id="zfw-4u-ShH"/>
                 <outlet property="logoImageView" destination="THn-D2-8fd" id="UGU-iY-QkC"/>
                 <outlet property="mainStackViewCenterConstraint" destination="8fg-go-xkm" id="ge8-xi-HNl"/>
+                <outlet property="resultView" destination="iXY-Kp-SLB" id="7BE-mw-aan"/>
                 <outlet property="starsStackView" destination="hdc-Mg-9Jg" id="29c-j7-opK"/>
                 <outlet property="submitButton" destination="9uG-c2-MVQ" id="Xon-JA-wHx"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qYI-Rq-A0W"/>
@@ -29,6 +30,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-Kp-SLB" customClass="RRResultView" customModule="ReviewRelic" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h1B-Cd-F0g">
+                            <rect key="frame" x="122" y="294" width="170" height="230.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successTick" translatesAutoresizingMaskIntoConstraints="NO" id="OTw-Ct-JEi">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzf-T5-5eL">
+                                    <rect key="frame" x="64.5" y="210" width="41.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="h1B-Cd-F0g" firstAttribute="centerY" secondItem="iXY-Kp-SLB" secondAttribute="centerY" id="J92-d6-MbA"/>
+                        <constraint firstItem="h1B-Cd-F0g" firstAttribute="centerX" secondItem="iXY-Kp-SLB" secondAttribute="centerX" id="aDV-Gp-Ft4"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="resultImageView" destination="OTw-Ct-JEi" id="Uyk-WG-DqF"/>
+                        <outlet property="resultLabel" destination="Zzf-T5-5eL" id="3Pa-a4-4et"/>
+                    </connections>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-MI-HwW" userLabel="main">
                     <rect key="frame" x="20" y="166.5" width="374" height="493.5"/>
                     <subviews>
@@ -114,7 +143,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-ld-ST8" userLabel="poweredBy">
                     <rect key="frame" x="20" y="783" width="374" height="79"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uG-c2-MVQ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uG-c2-MVQ" customClass="RRButton" customModule="ReviewRelic" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4jS-st-sFf"/>
@@ -174,13 +203,17 @@
             <constraints>
                 <constraint firstItem="V7s-ld-ST8" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="0u9-Ob-r3R"/>
                 <constraint firstItem="EFE-MI-HwW" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-40" id="8fg-go-xkm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iXY-Kp-SLB" secondAttribute="bottom" id="98y-zQ-H2g"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V7s-ld-ST8" secondAttribute="bottom" id="CRE-Oa-mxY"/>
                 <constraint firstItem="EFE-MI-HwW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-20" id="FNC-wU-yrm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V7s-ld-ST8" secondAttribute="trailing" constant="20" id="HFo-5T-Wha"/>
+                <constraint firstItem="iXY-Kp-SLB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PWL-WT-tfR"/>
                 <constraint firstItem="cgP-2w-eRe" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-40" id="QbP-mt-nBM"/>
+                <constraint firstItem="iXY-Kp-SLB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Vio-Oh-Ih7"/>
                 <constraint firstItem="Hj6-rp-3Cg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="aEv-mO-dgu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hj6-rp-3Cg" secondAttribute="trailing" constant="12" id="j1i-RV-5wj"/>
                 <constraint firstItem="V7s-ld-ST8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="m30-pp-mez"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iXY-Kp-SLB" secondAttribute="trailing" id="rj9-jm-L3b"/>
                 <constraint firstItem="EFE-MI-HwW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="vQ4-AC-mna"/>
             </constraints>
             <point key="canvasLocation" x="139" y="128"/>
@@ -190,6 +223,7 @@
         <image name="RRLogo" width="141" height="141"/>
         <image name="RRLogoSmall" width="40" height="40"/>
         <image name="close" width="12" height="11"/>
+        <image name="successTick" width="170" height="170"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
