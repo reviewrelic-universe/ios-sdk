@@ -30,8 +30,47 @@ enum ReviewRelicModels {
             hmac = signature.hmac(algorithm: .SHA256, key: ReviewRelic.shared.appSecret)
         }
     }
-    
+        
     struct Response: Codable {
+        let data: DataClass
+        
+        struct DataClass: Codable {
+            let name, merchantID: String
+            let settings: Settings
+            let reviewSettings: [ReviewSetting]
+            
+            struct ReviewSetting: Codable {
+                let label: String
+                let value: Int
+            }
+            
+            struct Settings: Codable {
+                let emptyImage, fillImage, appLogo: String
+                let type: Int
+                let canSkip, shouldShowImages: Bool
+                let color: String
+                
+                enum CodingKeys: String, CodingKey {
+                    case emptyImage = "empty-image"
+                    case fillImage = "fill-image"
+                    case appLogo = "app-logo"
+                    case type
+                    case canSkip = "can-skip"
+                    case shouldShowImages = "should-show-images"
+                    case color
+                }
+            }
+            
+            enum CodingKeys: String, CodingKey {
+                case name
+                case merchantID = "merchant-id"
+                case settings
+                case reviewSettings = "review-settings"
+            }
+        }
+    }
+
+    struct Responsea: Codable {
         
         let name, merchantID: String
         let settings: Settings

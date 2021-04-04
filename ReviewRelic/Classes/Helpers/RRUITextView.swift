@@ -14,9 +14,7 @@ class RRUITextView: UITextView, UITextViewDelegate {
         super.awakeFromNib()
         setPlaceHolder()
         delegate = self
-        setRoundedCorner(radius: 6)
-        setBorder(color: .borderColor, width: 1)
-        textContainerInset = .init(top: 16, left: 8, bottom: 16, right: 8)
+        textContainerInset = .zero
     }
 
     let placeHolder = "Add any further comments"

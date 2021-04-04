@@ -15,10 +15,12 @@ class RRButton: UIButton {
         case normal
         case loading
         case submitted
+        case disabled
     }
     
     func set(state: State){
         
+        hideActivityIndicator()
         switch state {
         
         case .normal:
@@ -30,7 +32,11 @@ class RRButton: UIButton {
             isEnabled = false
             setTitle(nil, for: .normal)
             self.showActivityIndicator()
-        
+
+        case .disabled:
+            isEnabled = false
+            setTitle("Submit", for: .normal)
+            
         case .submitted:
             setTitle("Submited", for: .normal)
             hideActivityIndicator()

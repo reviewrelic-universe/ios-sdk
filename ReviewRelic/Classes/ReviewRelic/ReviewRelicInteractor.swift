@@ -37,11 +37,13 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
             return
         }
         
+
+        
         if let response = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: data) {
             presenter?.presentData(response: response)
         }else{
             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
-            print(json ?? "Could not parse data")
+            Print(json ?? "Could not parse data")
             presenter?.presentDataFailure()
         }
     }

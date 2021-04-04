@@ -27,23 +27,33 @@ public class ReviewRelicViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsStackView: UIStackView!
     @IBOutlet weak var commentTextView: RRUITextView!
+    @IBOutlet weak var commentTextViewContainerView: UIView!{
+        didSet{
+            commentTextViewContainerView.setBorder(color: .borderColor, width: 1)
+            commentTextViewContainerView.setRoundedCorner(radius: 6)
+        }
+    }
+    
     @IBOutlet weak var wordsCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var mainStackViewCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var wordsCollectionView: UICollectionView!{
         didSet{
             wordsCollectionView.register(UINib(nibName:"WordsCollectionViewCell", bundle: ReviewRelic.shared.bundle), forCellWithReuseIdentifier:"WordsCollectionViewCell")
             let alignedFlowLayout = wordsCollectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+            alignedFlowLayout?.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 20)
             alignedFlowLayout?.horizontalAlignment = .left
             alignedFlowLayout?.verticalAlignment = .top
-            alignedFlowLayout?.minimumLineSpacing = 10
-            alignedFlowLayout?.minimumInteritemSpacing = 10
+            alignedFlowLayout?.minimumLineSpacing = 12
+            alignedFlowLayout?.minimumInteritemSpacing = 12
             alignedFlowLayout?.scrollDirection = .vertical
         }
     }
     
     @IBOutlet weak var submitButton: RRButton!{
         didSet{
-            submitButton.setRoundedCorner(radius: 22)
+            submitButton.set(state: .disabled)
+            submitButton.setRoundedCorner(radius: 28)
+            submitButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
         }
     }
     
@@ -147,7 +157,17 @@ public class ReviewRelicViewController: UIViewController {
         interactor?.requestReviewData()
     }
     
-    var rating: Int = 0
+    var rating: Int = 0{
+        didSet{
+            if submitButton != nil {
+                if rating > 0 {
+                    submitButton.set(state: .normal)
+                }else{
+                    submitButton.set(state: .submitted)
+                }
+            }
+        }
+    }
 }
 
 // IBActions
@@ -214,7 +234,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     func displayDataSubmittedSuccessfully() {
         view.bringSubview(toFront: resultView)
         resultView.showWithAnimation()
-        resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .black)
+        resultView.show(kind: .success, themeColor: .successGreen)
         dismiss()
     }
    
@@ -284,8 +304,8 @@ extension ReviewRelicViewController: UICollectionViewDelegate, UICollectionViewD
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = words[indexPath.row].title.width(withConstrainedHeight: 36, font: UIFont.systemFont(ofSize: 14)) + 32
-        return CGSize(width: width, height: 36)
+        let width = words[indexPath.row].title.width(withConstrainedHeight: WordsCollectionViewCell.height, font: WordsCollectionViewCell.font) + 32
+        return CGSize(width: width, height: WordsCollectionViewCell.height)
     }
 }
 

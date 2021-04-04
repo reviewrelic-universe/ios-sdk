@@ -9,15 +9,18 @@ import UIKit
 
 class WordsCollectionViewCell: UICollectionViewCell {
 
+    static let height:CGFloat = 40
+    static let font:UIFont = .systemFont(ofSize: 15)
+
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     var themeColor: UIColor = .lightGray
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        wordLabel.font = UIFont.systemFont(ofSize: 14)
+        wordLabel.font = WordsCollectionViewCell.font
         containerView.setBorder(color: UIColor.borderColor, width: 0.8)
-        containerView.setRoundedCorner(radius: 18)
+        containerView.setRoundedCorner(radius: WordsCollectionViewCell.height/2)
 
         wordLabel.textColor = .darkText
     }

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="closeButton" destination="Hj6-rp-3Cg" id="i16-0B-K0z"/>
                 <outlet property="commentTextView" destination="R4V-f1-ZHm" id="qac-5W-dLu"/>
+                <outlet property="commentTextViewContainerView" destination="K4u-6e-sYa" id="sul-yZ-OOP"/>
                 <outlet property="descriptionLabel" destination="rOG-Ob-1Rb" id="BLz-ak-wL4"/>
                 <outlet property="headingLabel" destination="ugC-op-3ko" id="zfw-4u-ShH"/>
                 <outlet property="logoImageView" destination="THn-D2-8fd" id="UGU-iY-QkC"/>
@@ -59,7 +60,7 @@
                     </connections>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-MI-HwW" userLabel="main">
-                    <rect key="frame" x="20" y="166.5" width="374" height="493.5"/>
+                    <rect key="frame" x="20" y="146.5" width="374" height="533.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5y0-qs-JuC">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -123,30 +124,37 @@
                                 </collectionView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dVX-av-cLa">
-                            <rect key="frame" x="0.0" y="460.5" width="374" height="33"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4u-6e-sYa">
+                            <rect key="frame" x="0.0" y="460.5" width="374" height="73"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R4V-f1-ZHm" customClass="RRUITextView" customModule="ReviewRelic" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
+                                    <rect key="frame" x="8" y="16" width="358" height="41"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="156" id="n9e-am-qyv"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="n9e-am-qyv"/>
                                     </constraints>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="R4V-f1-ZHm" firstAttribute="top" secondItem="K4u-6e-sYa" secondAttribute="top" constant="16" id="2ma-Um-gO5"/>
+                                <constraint firstItem="R4V-f1-ZHm" firstAttribute="leading" secondItem="K4u-6e-sYa" secondAttribute="leading" constant="8" id="SFg-Mf-HXN"/>
+                                <constraint firstAttribute="bottom" secondItem="R4V-f1-ZHm" secondAttribute="bottom" constant="16" id="sVs-FQ-uei"/>
+                                <constraint firstAttribute="trailing" secondItem="R4V-f1-ZHm" secondAttribute="trailing" constant="8" id="shr-Jw-70A"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-ld-ST8" userLabel="poweredBy">
-                    <rect key="frame" x="20" y="783" width="374" height="79"/>
+                    <rect key="frame" x="20" y="771" width="374" height="91"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uG-c2-MVQ" customClass="RRButton" customModule="ReviewRelic" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="4jS-st-sFf"/>
+                                <constraint firstAttribute="height" constant="56" id="4jS-st-sFf"/>
                             </constraints>
                             <state key="normal" title="Submit"/>
                             <connections>
@@ -154,10 +162,10 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-rd-sjI">
-                            <rect key="frame" x="0.0" y="64" width="374" height="15"/>
+                            <rect key="frame" x="0.0" y="76" width="374" height="15"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NfV-ha-XbF">
-                                    <rect key="frame" x="96" y="0.0" width="182" height="15"/>
+                                    <rect key="frame" x="97.5" y="0.0" width="179.5" height="15"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Powered by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fj-sh-iJl">
                                             <rect key="frame" x="0.0" y="0.0" width="79.5" height="15"/>
@@ -171,8 +179,8 @@
                                                 <constraint firstAttribute="width" secondItem="qBh-m8-hB9" secondAttribute="height" multiplier="1:1" id="LgJ-ls-DTi"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-3n-dae">
-                                            <rect key="frame" x="102.5" y="0.0" width="79.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReviewRelic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-3n-dae">
+                                            <rect key="frame" x="102.5" y="0.0" width="77" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

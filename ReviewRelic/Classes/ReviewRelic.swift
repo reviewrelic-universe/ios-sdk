@@ -43,8 +43,13 @@ public class ReviewRelic {
     func getSettings(){
         let worker = ReviewRelicWorker()
         worker.fetchDataFor(apiKey: apiKey, success: { (responseData) in
-            UserDefaults.rRDefaults?.setValue(responseData, forKey: Constants.settings)
-            UserDefaults.rRDefaults?.synchronize()
+            /// saving a working object state over not working state
+            if let _ = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: responseData) {
+                UserDefaults.rRDefaults?.setValue(responseData, forKey: Constants.settings)
+                UserDefaults.rRDefaults?.synchronize()
+            }else{
+                Print("Could not initialize, please check the API Key")
+            }
         }, failure: {
             Print("Could not initialize, please check the API Key")
         })
