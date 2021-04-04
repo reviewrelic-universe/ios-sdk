@@ -15,8 +15,15 @@ protocol ReviewRelicDisplayLogic: class {
     func displayDataSubmittedFailed()
 }
 
+public protocol ReviewRelicDelegate: class {
+    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating rating: Int)
+    func reviewRelicViewControllerRatingSubmissionFailed(_: ReviewRelicViewController)
+    func reviewRelicViewControllerLoadSettingsFailed(_: ReviewRelicViewController)
+}
+
 public class ReviewRelicViewController: UIViewController {
     
+    public weak var delegate: ReviewRelicDelegate?
     @IBOutlet weak var logoImageView: UIImageView!{
         didSet{
             logoImageView.setRoundedFull()
@@ -39,6 +46,7 @@ public class ReviewRelicViewController: UIViewController {
     @IBOutlet weak var wordsCollectionView: UICollectionView!{
         didSet{
             wordsCollectionView.register(UINib(nibName:"WordsCollectionViewCell", bundle: ReviewRelic.shared.bundle), forCellWithReuseIdentifier:"WordsCollectionViewCell")
+            wordsCollectionView.addTapGestureToHideKeyboard()
             let alignedFlowLayout = wordsCollectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
             alignedFlowLayout?.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 20)
             alignedFlowLayout?.horizontalAlignment = .left
@@ -129,7 +137,9 @@ public class ReviewRelicViewController: UIViewController {
             guard let info:Dictionary = (notification as NSNotification).userInfo, let strongSelf = self else { return }
             let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! Double)
             
-            strongSelf.mainStackViewCenterConstraint.constant = -160
+            
+            let viewPoint = strongSelf.commentTextView.superview?.convert(strongSelf.commentTextView.frame.origin, to: nil)
+            strongSelf.mainStackViewCenterConstraint.constant = -(viewPoint?.y ?? 320)/3
             strongSelf.view.animateAfterConstraintChangeDuration(seconds: duration)
         }
         
@@ -221,6 +231,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
         view.bringSubview(toFront: resultView)
         resultView.showWithAnimation()
         resultView.show(kind: .failure, themeColor: .lightText)
+        delegate?.reviewRelicViewControllerLoadSettingsFailed(self)
         dismiss()
     }
     
@@ -228,13 +239,15 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
         view.bringSubview(toFront: resultView)
         resultView.showWithAnimation()
         resultView.show(kind: .failure, themeColor: .lightText)
+        delegate?.reviewRelicViewControllerRatingSubmissionFailed(self)
         dismiss()
     }
     
     func displayDataSubmittedSuccessfully() {
         view.bringSubview(toFront: resultView)
         resultView.showWithAnimation()
-        resultView.show(kind: .success, themeColor: .successGreen)
+        resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .successGreen)
+        delegate?.reviewRelicViewController(self, submittedReviewRating: rating)
         dismiss()
     }
    
@@ -300,6 +313,7 @@ extension ReviewRelicViewController: UICollectionViewDelegate, UICollectionViewD
     
     public  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         rating = words[indexPath.row].rating
+        view.endEditing(true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -123,6 +123,16 @@ extension UIView {
             self.alpha = 1
         })
     }
+    
+    func addTapGestureToHideKeyboard(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func hideKeyboard(){
+        self.endEditing(true)
+    }
 }
 
 enum ShakeDirection:Int {
