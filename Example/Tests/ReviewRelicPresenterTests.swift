@@ -42,17 +42,17 @@ class ReviewRelicPresenterTests: XCTestCase
     // MARK: Test doubles
     
     class ReviewRelicDisplayLogicSpy: ReviewRelicDisplayLogic {
+        
         var displayDataSubmittedSuccessfullyCalled = false
         func displayDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse) {
             displayDataSubmittedSuccessfullyCalled = true
         }
         
-        
         var displayDataCalled = false
         func displayData(viewModel: ReviewRelicModels.ViewModel) {
             displayDataCalled = true
         }
-        
+            
         var displayDataFailureCalled = false
         func displayDataFailure() {
             displayDataFailureCalled = true
@@ -117,7 +117,7 @@ class ReviewRelicPresenterTests: XCTestCase
         guard
             let data = ReviewRelicTestsData.StarBasedRatingJson.data(using: .utf8),
             let response = try? JSONDecoder().decode(ReviewRelicModels.SettingsResponse.self, from: data) else {
-           
+            
             XCTAssertTrue(false,  "Settings data encoding failed")
             return
         }

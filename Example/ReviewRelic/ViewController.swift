@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReviewRelic
 
 class ViewController: UIViewController {
 
@@ -49,5 +50,5 @@ extension ViewController: ReviewRelicDelegate {
 struct Item: ReviewRelicItem {
     var transactionId: String = "32"
     var reviewsId: String? = nil
+    
 }
-

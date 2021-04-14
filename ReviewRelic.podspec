@@ -19,15 +19,11 @@ Pod::Spec.new do |s|
   s.author           = { 'raheelsadiq' => '“raheel.sadiq.08@gmail.com”' }
   s.source           = { :git => 'https://github.com/reviewrelic-universe/ios-sdk.git', :tag => s.version.to_s}
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'ReviewRelic/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'ReviewRelic' => ['ReviewRelic/Assets/*.png']
-  # }
+  s.resources = 'ReviewRelic/**/*.{xcassets}'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+
 end

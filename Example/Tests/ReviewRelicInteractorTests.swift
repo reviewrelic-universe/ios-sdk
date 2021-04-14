@@ -49,7 +49,6 @@ class ReviewRelicInteractorTests: XCTestCase
     
     class ReviewRelicPresentationLogicSpy: ReviewRelicPresentationLogic {
         
-        
         var presentDataSubmittedSuccessfullyCalled = false
         var presentDataFailureCalled = false
         var dataPresentedCalled = false
@@ -98,7 +97,6 @@ class ReviewRelicInteractorTests: XCTestCase
         })
         
         wait(for: [expectation], timeout: 5)
-        
         XCTAssertTrue(spy.presentDataSubmittedSuccessfullyCalled, "Data submission failed")
     }
     

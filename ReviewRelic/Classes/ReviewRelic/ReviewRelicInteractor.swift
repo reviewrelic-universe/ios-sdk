@@ -37,8 +37,6 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
             return
         }
         
-
-        
         if let response = try? JSONDecoder().decode(ReviewRelicModels.SettingsResponse.self, from: data) {
             presenter?.presentData(response: response)
         }else{

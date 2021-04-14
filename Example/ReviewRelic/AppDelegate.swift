@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReviewRelic
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,32 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZjNzcxN2ZlYTllNjk1MDE0YzA2YjUyZmFiMzQ2NTVlZTM2MmNlY2Q3M2RhMGU3ZTYwZTM0NmFjMzBiNTdmNjg0NmJiNjk4NzJmYjFhMWMiLCJpYXQiOjE2MTczODMzNjQsIm5iZiI6MTYxNzM4MzM2NCwiZXhwIjoxNjQ4OTE5MzY0LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.CNIY0_C-Cp4MjRKy4oLLZJ4lq_Lvyl5rRQmpI_ckPBukEN05OD730XTGW8ECeOKgNLOVLoJ4FHR7ZWl6HmkHLaBwOPUzCJSnHlNjRz66ctepGHgmcVxDMjjGlcFEd_PVJMmqipPApJECH048P5be21JpxS1hxYsNbrclBSxE_N4-eHL_COR84NDKggSlEkNKbHIx8XyiOhczzcLJtjZHFnJpXo1E09wOUfnQKLahLeekOfTpHBNl8s0k7W8Sa_ZhO1mMUTEvr2r-pDLme_vbXoNd6vW4vOcOJ6T5BIKalt69Fg87LHhHFEJ0Lw-vcpj02Nu-nVteFEC9xPZFKzsntWPqcBiZIaWHbiKqorJDVoeNcAqREC3_XS6EGQ6PMl2gS7Xefy1nkvOSpxJsHp0Qo6ZEv7nnKkz0M2CSaB6ywAXQjCW23CVBnuvu04w4v1P7djCE5iKzDN19RQMnLQWA8_DacuzbgYLdXmeSrKq_t02V8HZHSU_2u0wMSPZqLrg7qlsz-WgqN1ol83LngQZ-W6D82z7l05qP3aBCvCVZx1k-D-qGGPXOgpPLkXQ6Zeyywk730gUGHaBmmZmS72v99qQF_6sZOHC-_UuwN6GP0uK2JgE0m5m-H1wju8DzPwmGaVPp4nPbzBLwRPX6vSi9Vb5AlLPH8h0Y6bRzw2oQWQY"
+        
+        ReviewRelic.shared.initialize(
+            apiKey: apiKey,
+            appSecret: "7e659a91fefee11b87700e582639ec61d4869a99d1232577c64400c5b17bf103")
+    
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 

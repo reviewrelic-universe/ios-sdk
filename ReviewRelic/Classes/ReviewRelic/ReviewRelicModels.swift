@@ -21,7 +21,7 @@ public enum ReviewRelicModels {
         let timeStamp: Int
         let request: Request
         
-        init(request: Request, time: Int? = nil, label: String) {
+        init(request: Request, time: Int? = nil) {
             self.request = request
             timeStamp = time ?? Int(Date().addingTimeInterval(300).timeIntervalSince1970)
             let signature = """
@@ -69,7 +69,6 @@ public enum ReviewRelicModels {
             }
         }
     }
-    
     // MARK: - Resonse
     public struct SumissionResponse: Codable {
         let transaction: Transaction

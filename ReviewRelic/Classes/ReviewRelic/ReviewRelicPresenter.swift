@@ -39,8 +39,7 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
         }
     }
     
-    func presentData(response: ReviewRelicModels.SettingsResponse) {
-        
+    func presentData(response: ReviewRelicModels.SettingsResponse) {        
         let viewModel: ReviewRelicModels.ViewModel
         
         let appLogo: UIImage

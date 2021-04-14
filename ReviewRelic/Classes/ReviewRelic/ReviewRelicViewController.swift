@@ -16,10 +16,12 @@ protocol ReviewRelicDisplayLogic: class {
 }
 
 public protocol ReviewRelicDelegate: class {
+
     func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelicModels.SumissionResponse.Transaction)
     func reviewRelicViewControllerRatingSubmissionFailed(_: ReviewRelicViewController)
     func reviewRelicViewControllerLoadSettingsFailed(_: ReviewRelicViewController)
 }
+
 
 extension ReviewRelicDelegate {
     func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelicModels.SumissionResponse.Transaction) {}

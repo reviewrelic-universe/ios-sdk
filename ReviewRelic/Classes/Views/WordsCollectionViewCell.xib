@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WordsCollectionViewCell" id="gTV-IL-0wX" customClass="WordsCollectionViewCell" customModule="ReviewRelic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="186" height="69"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="186" height="69"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmi-fR-Lbp">
+                        <rect key="frame" x="0.0" y="0.0" width="186" height="69"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-Ct-YdK">
+                                <rect key="frame" x="0.0" y="0.0" width="186" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sn3-Ct-YdK" firstAttribute="top" secondItem="cmi-fR-Lbp" secondAttribute="top" id="CNb-82-wpC"/>
+                            <constraint firstItem="Sn3-Ct-YdK" firstAttribute="leading" secondItem="cmi-fR-Lbp" secondAttribute="leading" id="LYh-A2-imb"/>
+                            <constraint firstAttribute="trailing" secondItem="Sn3-Ct-YdK" secondAttribute="trailing" id="RwK-Q4-bmj"/>
+                            <constraint firstAttribute="bottom" secondItem="Sn3-Ct-YdK" secondAttribute="bottom" id="Ur7-Nh-9MV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="cmi-fR-Lbp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AnP-zn-z9x"/>
+                <constraint firstItem="cmi-fR-Lbp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bqy-32-4wW"/>
+                <constraint firstAttribute="bottom" secondItem="cmi-fR-Lbp" secondAttribute="bottom" id="eKe-xe-oeX"/>
+                <constraint firstAttribute="trailing" secondItem="cmi-fR-Lbp" secondAttribute="trailing" id="r10-eV-QHL"/>
+            </constraints>
+            <size key="customSize" width="186" height="69"/>
+            <connections>
+                <outlet property="containerView" destination="cmi-fR-Lbp" id="1TF-E5-Lo5"/>
+                <outlet property="wordLabel" destination="Sn3-Ct-YdK" id="l7d-Le-ELt"/>
+            </connections>
+            <point key="canvasLocation" x="236.23188405797103" y="116.18303571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
