@@ -70,6 +70,8 @@ public class ReviewRelicViewController: UIViewController {
             submitButton.set(state: .disabled)
             submitButton.setRoundedCorner(radius: 28)
             submitButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
+            submitButton.setTitle("Submit", for: .normal)
+            submitButton.setTitleColor(.white, for: .normal)
         }
     }
     
@@ -79,6 +81,7 @@ public class ReviewRelicViewController: UIViewController {
         }
     }
     
+    var item: ReviewRelicItem!
     var interactor: ReviewRelicBusinessLogic?
     var viewModel: ReviewRelicModels.ViewModel?
     var words: [ReviewRelicModels.ViewModel.WordsData.Word] = []{
@@ -89,9 +92,10 @@ public class ReviewRelicViewController: UIViewController {
     }
     // MARK: Object lifecycle
     
-    class func instanceFromNib() -> ReviewRelicViewController {
+    class func instanceFromNibwith(item: ReviewRelicItem) -> ReviewRelicViewController {
         let bundle = Bundle(for: ReviewRelic.self)
         let controller = ReviewRelicViewController(nibName: "ReviewRelicViewController", bundle: bundle)
+        controller.item = item
         return controller
     }
     
@@ -126,7 +130,9 @@ public class ReviewRelicViewController: UIViewController {
         submitButton.setTitleColor(titleColor, for: .normal)
     }
     
+    private var isSetImage: Bool = false
     public func setReview(image: UIImage?){
+        isSetImage = true
         logoImageView.image = image
     }
     
@@ -219,7 +225,14 @@ extension ReviewRelicViewController {
         }
 
         let comment = commentTextView == nil ? "" : commentTextView.rrText
-        let request = ReviewRelicModels.Request(rating: rating, itemId: "11", comments: comment)
+        let request = ReviewRelicModels.Request(
+            rating: rating,
+            itemId: item.transactionId,
+            reviewerId: item.reviewsId,
+            comments: comment,
+            title: headingLabel.text ?? "",
+            description: descriptionLabel.text ?? "")
+        
         interactor?.submitData(request: request, completion: nil)
         (sender as? RRButton)?.set(state: .loading)
     }
@@ -271,13 +284,13 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     func displayData(viewModel: ReviewRelicModels.ViewModel) {
         
         self.viewModel = viewModel
-        logoImageView.image = viewModel.appLogo
+        if !isSetImage {
+            logoImageView.image = viewModel.appLogo
+        }
         closeButton.setBackgroundImage(viewModel.themeColor.withAlphaComponent(0.2).image(), for: .normal)
         closeButton.tintColor = viewModel.themeColor
         
         submitButton.setBackgroundImage(viewModel.themeColor.image(), for: .normal)
-        submitButton.setTitle("Submit", for: .normal)
-        submitButton.setTitleColor(.white, for: .normal)
 
         switch viewModel.ratingType {
         

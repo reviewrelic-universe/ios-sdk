@@ -43,12 +43,21 @@ class ReviewRelicWorker {
         let url = URL(string:"https://reviewrelic.com/api/v1/store")!
         var urlRequest = URLRequest(url: url)
         
-        let params: [String: Any] = [
+        
+        var params: [String: Any] = [
             "transaction-id": workerRequest.request.itemId,
             "rating": workerRequest.request.rating,
             "time" : workerRequest.timeStamp,
-            "comments": workerRequest.request.comments
+            "comments": workerRequest.request.comments,
+            "extra": [
+                "title": workerRequest.request.title,
+                "description": workerRequest.request.description
+            ]
         ]
+        
+        if let reviewId = workerRequest.request.reviewerId {
+            params["reviewer-id"] = reviewId
+        }
         
         do{
             let paramsData = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)

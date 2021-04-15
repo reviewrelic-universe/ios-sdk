@@ -76,8 +76,7 @@ class ReviewRelicInteractorTests: XCTestCase
     // MARK: Tests
     
     func testHMAC(){
-        
-        let request = ReviewRelicModels.Request(rating: 1, itemId: "11", comments: "Comments")
+        let request = ReviewRelicModels.Request(rating: 1, itemId: "11", reviewerId: nil, comments: "comments", title: "", description: "")
         let workerRequest = ReviewRelicModels.WorkerRequest(request: request, time: 1617446778)
         let createdHMACForOneTime = "2f19a1e4bb9a49dc3a021fa190945162da7aaceb17db447b9c3f72099e1b9eea"
         XCTAssertEqual(workerRequest.hmac, createdHMACForOneTime, "Signature is not valid for requests")
@@ -87,8 +86,8 @@ class ReviewRelicInteractorTests: XCTestCase
         
         let expectation = XCTestExpectation(description: "Submitting Data")
         
-        let request = ReviewRelicModels.Request(rating: 1, itemId: "11", comments: "Comments")
-        
+        let request = ReviewRelicModels.Request(rating: 1, itemId: "11", reviewerId: nil, comments: "comments", title: "", description: "")
+
         let spy = ReviewRelicPresentationLogicSpy()
         sut.presenter = spy
         

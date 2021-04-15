@@ -13,7 +13,10 @@ public enum ReviewRelicModels {
     struct Request {
         let rating: Int
         let itemId: String
+        let reviewerId: String?
         let comments: String
+        let title: String
+        let description: String
     }
     
     struct WorkerRequest {
