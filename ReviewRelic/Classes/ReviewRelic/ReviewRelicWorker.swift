@@ -54,7 +54,7 @@ class ReviewRelicWorker {
             let paramsData = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
             urlRequest.httpBody = paramsData
         }catch{
-            print("Error creating body")
+            Print("Error creating body")
         }
         
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -120,6 +120,16 @@ public class ReviewRelicViewController: UIViewController {
         descriptionLabel.textColor = textColor
     }
     
+    public func setSubmitButton(title: String, font: UIFont? = .systemFont(ofSize: 14), titleColor: UIColor? = .white) {
+        submitButton.setTitle(title, for: .normal)
+        submitButton.titleLabel?.font = font
+        submitButton.setTitleColor(titleColor, for: .normal)
+    }
+    
+    public func setReview(image: UIImage?){
+        logoImageView.image = image
+    }
+    
     // MARK: Setup
     
     private func setup() {
@@ -233,7 +243,6 @@ extension ReviewRelicViewController {
 
 // Display
 extension ReviewRelicViewController: ReviewRelicDisplayLogic {
-
     
     func displayDataFailure() {
         view.bringSubview(toFront: resultView)
