@@ -9,9 +9,9 @@
 import UIKit
 
 protocol ReviewRelicPresentationLogic {
-    func presentData(response: ReviewRelicModels.Response)
+    func presentData(response: ReviewRelicModels.SettingsResponse)
     func presentDataFailure()
-    func presentDataSubmittedSuccessfully()
+    func presentDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse)
     func presentDataSubmittedFailed()
 }
 
@@ -21,9 +21,9 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
     
     // MARK: Present
     
-    func presentDataSubmittedSuccessfully() {
+    func presentDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse) {
         DispatchQueue.main.async { [weak self] in
-            self?.viewController?.displayDataSubmittedSuccessfully()
+            self?.viewController?.displayDataSubmittedSuccessfully(data: data)
         }
     }
     
@@ -39,8 +39,7 @@ class ReviewRelicPresenter: ReviewRelicPresentationLogic {
         }
     }
     
-    func presentData(response: ReviewRelicModels.Response) {
-        
+    func presentData(response: ReviewRelicModels.SettingsResponse) {        
         let viewModel: ReviewRelicModels.ViewModel
         
         let appLogo: UIImage

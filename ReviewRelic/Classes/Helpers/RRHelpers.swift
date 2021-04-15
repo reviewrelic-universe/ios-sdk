@@ -197,3 +197,45 @@ extension UIColor {
     static let borderColor = UIColor.lightGray.withAlphaComponent(0.3)
     static let successGreen = UIColor(hex: 0x228B22)
 }
+
+public extension UIViewController {
+    func presentReviewRelic(item: ReviewRelicItem, completion: (() -> Void)? = nil) -> ReviewRelicViewController {
+        let controller = ReviewRelicViewController.instanceFromNibwith(item: item)
+        present(controller, animated: true, completion: completion)
+        return controller
+    }
+}
+
+extension UserDefaults {
+    class var rRDefaults: UserDefaults? {
+        let userDefaults = UserDefaults.init(suiteName: "RRDefaults")
+        return userDefaults
+    }
+}
+
+struct Constants {
+    static let settings = "RRSettings"
+}
+
+extension Dictionary where Key == String {
+    
+    var json: String {
+        let invalidJson = "Not a valid JSON"
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+            return String(bytes: jsonData, encoding: String.Encoding.utf8) ?? invalidJson
+        } catch {
+            return invalidJson
+        }
+    }
+    
+    func printJson() {
+        print(json)
+    }
+}
+
+func Print(_ object: Any) {
+    if ReviewRelic.shared.isLogginEnabled {
+        print("Review Relic: ", object)
+    }
+}

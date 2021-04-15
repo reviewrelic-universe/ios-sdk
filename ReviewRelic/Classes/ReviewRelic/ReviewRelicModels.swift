@@ -8,12 +8,15 @@
 
 import UIKit
 
-enum ReviewRelicModels {
+public enum ReviewRelicModels {
     
     struct Request {
         let rating: Int
         let itemId: String
+        let reviewerId: String?
         let comments: String
+        let title: String
+        let description: String
     }
     
     struct WorkerRequest {
@@ -31,7 +34,7 @@ enum ReviewRelicModels {
         }
     }
         
-    struct Response: Codable {
+    struct SettingsResponse: Codable {
         let data: DataClass
         
         struct DataClass: Codable {
@@ -69,42 +72,28 @@ enum ReviewRelicModels {
             }
         }
     }
-
-    struct Responsea: Codable {
-        
-        let name, merchantID: String
-        let settings: Settings
-        let reviewSettings: [ReviewSetting]
+    // MARK: - Resonse
+    public struct SumissionResponse: Codable {
+        let transaction: Transaction
+        let status: Bool
         
         enum CodingKeys: String, CodingKey {
-            case name
-            case merchantID = "merchant-id"
-            case settings
-            case reviewSettings = "review-settings"
+            case transaction = "data"
+            case status
         }
-        
-        
-        struct ReviewSetting: Codable {
-            let label: String
-            let value: Int
-        }
-        
-        struct Settings: Codable {
-            let emptyImage, fillImage, appLogo: String
-            let type: Int
-            let canSkip, shouldShowImages: Bool
-            let color: String
+
+        // MARK: - DataClass
+        public struct Transaction: Codable {
+            let transactionID, uuid: String
+            let rating: Int
+            let label, comments: String?
             
             enum CodingKeys: String, CodingKey {
-                case emptyImage = "empty-image"
-                case fillImage = "fill-image"
-                case appLogo = "app-logo"
-                case type
-                case canSkip = "can-skip"
-                case shouldShowImages = "should-show-images"
-                case color
+                case transactionID = "transaction-id"
+                case uuid, rating, label, comments
             }
         }
+        
     }
     
     struct ViewModel {

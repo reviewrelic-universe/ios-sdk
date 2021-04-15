@@ -51,4 +51,17 @@ class RRUITextView: UITextView, UITextViewDelegate {
             isScrollEnabled = false
         }
     }
+    
+    var rrText: String {
+        return text == placeHolder ? "" : text
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if textView.text.count > 1000 {
+            shake()
+            return false
+        }
+        return true
+    }
 }

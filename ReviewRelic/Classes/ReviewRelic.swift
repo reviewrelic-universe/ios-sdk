@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ReviewRelicItem {
-    var transectionId: String { get set }
+    var transactionId: String { get set }
     var reviewsId: String? {get set}
 }
 
@@ -37,14 +37,17 @@ public class ReviewRelic {
     public func initialize(apiKey: String, appSecret: String) {
         self.apiKey = apiKey
         self.appSecret = appSecret
-        getSettings()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { [weak self](_) in
+            self?.getSettings()
+        }
     }
     
     func getSettings(){
         let worker = ReviewRelicWorker()
         worker.fetchDataFor(apiKey: apiKey, success: { (responseData) in
             /// saving a working object state over not working state
-            if let _ = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: responseData) {
+            if let _ = try? JSONDecoder().decode(ReviewRelicModels.SettingsResponse.self, from: responseData) {
                 UserDefaults.rRDefaults?.setValue(responseData, forKey: Constants.settings)
                 UserDefaults.rRDefaults?.synchronize()
             }else{
@@ -56,44 +59,3 @@ public class ReviewRelic {
     }
 }
 
-public extension UIViewController {
-    func presentReviewRelic(item: ReviewRelicItem, completion: (() -> Void)? = nil) -> ReviewRelicViewController {
-        let controller = ReviewRelicViewController.instanceFromNib()
-        present(controller, animated: true, completion: completion)
-        return controller
-    }
-}
-
-extension UserDefaults {
-    class var rRDefaults: UserDefaults? {
-        let userDefaults = UserDefaults.init(suiteName: "RRDefaults")
-        return userDefaults
-    }
-}
-
-struct Constants {
-    static let settings = "RRSettings"
-}
-
-extension Dictionary where Key == String {
-    
-    var json: String {
-        let invalidJson = "Not a valid JSON"
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-            return String(bytes: jsonData, encoding: String.Encoding.utf8) ?? invalidJson
-        } catch {
-            return invalidJson
-        }
-    }
-    
-    func printJson() {
-        print(json)
-    }
-}
-
-func Print(_ object: Any) {
-    if ReviewRelic.shared.isLogginEnabled {
-        print("Review Relic: ", object)
-    }
-}

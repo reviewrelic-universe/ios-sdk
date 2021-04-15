@@ -9,25 +9,15 @@
 Pod::Spec.new do |s|
   s.name             = 'ReviewRelic'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ReviewRelic.'
+  s.summary          = 'Collect powerful feedback from your native app with Reviewrelic’s flexible and easy-to-install SDK for IOS'
   s.license = { :type => "APACHE", :file => "LICENSE" }
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.description = 'Create a Seamless Review Experience For your Mobile Apps. Collect powerful feedback from your native app with Reviewrelic’s flexible and easy-to-install SDK for IOS and ANDROID'
+  
   s.homepage         = 'https://github.com/reviewrelic-universe/ios-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'raheelsadiq' => '“raheel.sadiq.08@gmail.com”' }
-  s.source           = { :git => 'https://github.com/reviewrelic-universe/ios-sdk.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/reviewrelic-universe/ios-sdk.git', :tag => s.version.to_s}
 
   s.ios.deployment_target = '12.0'
 

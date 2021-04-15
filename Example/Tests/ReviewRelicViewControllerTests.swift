@@ -29,7 +29,7 @@ class ReviewRelicViewControllerTests: XCTestCase {
     // MARK: Test setup
 
     func setupReviewRelicViewController() {
-        sut = ReviewRelicViewController.instanceFromNib()
+        sut = ReviewRelicViewController.instanceFromNibwith(item: TestItem())
     }
     
     func loadView() {
@@ -81,4 +81,9 @@ class ReviewRelicViewControllerTests: XCTestCase {
             submitDataCalled = true
         }
     }
+}
+
+struct TestItem: ReviewRelicItem {
+    var transactionId: String = "11"
+    var reviewsId: String? = nil
 }

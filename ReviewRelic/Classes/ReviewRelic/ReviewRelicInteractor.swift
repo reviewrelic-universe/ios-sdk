@@ -37,9 +37,7 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
             return
         }
         
-
-        
-        if let response = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: data) {
+        if let response = try? JSONDecoder().decode(ReviewRelicModels.SettingsResponse.self, from: data) {
             presenter?.presentData(response: response)
         }else{
             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
@@ -61,24 +59,18 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
             apiKey: ReviewRelic.shared.apiKey,
             success: { [weak self](data) in
                 
-                let success: Bool
-                do {
-                    let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
-                    success = response["status"] as? Bool ?? false
-                } catch let error as NSError {
-                    Print(error)
-                    success = false
-                    return
-                }
-                
-                if success {
-                    self?.presenter?.presentDataSubmittedSuccessfully()
+                if let response = try? JSONDecoder().decode(ReviewRelicModels.SumissionResponse.self, from: data) {
                     
+                    if response.status == true {
+                        self?.presenter?.presentDataSubmittedSuccessfully(data: response)
+                    }else{
+                        self?.presenter?.presentDataSubmittedFailed()
+                    }
                 }else{
-                    // save request for future
+                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+                    Print(json ?? "Could not parse data")
                     self?.presenter?.presentDataSubmittedFailed()
                 }
-                
                 completion?()
                 
             }, failure: { [weak self] in

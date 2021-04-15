@@ -43,16 +43,16 @@ class ReviewRelicPresenterTests: XCTestCase
     
     class ReviewRelicDisplayLogicSpy: ReviewRelicDisplayLogic {
         
+        var displayDataSubmittedSuccessfullyCalled = false
+        func displayDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse) {
+            displayDataSubmittedSuccessfullyCalled = true
+        }
+        
         var displayDataCalled = false
         func displayData(viewModel: ReviewRelicModels.ViewModel) {
             displayDataCalled = true
         }
-        
-        var displayDataSubmittedSuccessfullyCalled = false
-        func displayDataSubmittedSuccessfully() {
-            displayDataSubmittedSuccessfullyCalled = true
-        }
-        
+            
         var displayDataFailureCalled = false
         func displayDataFailure() {
             displayDataFailureCalled = true
@@ -74,7 +74,6 @@ class ReviewRelicPresenterTests: XCTestCase
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.0011)
-
     }
     
     func testPresentDataFailure(){
@@ -94,7 +93,7 @@ class ReviewRelicPresenterTests: XCTestCase
         sut.viewController = spy
         
         asynExpectation {
-            sut.presentDataSubmittedSuccessfully()
+            sut.presentDataSubmittedSuccessfully(data: .init(transaction: .init(transactionID: "", uuid: "", rating: 0, label: "", comments: ""), status: true))
         }
         
         XCTAssertTrue(spy.displayDataSubmittedSuccessfullyCalled, "Data not presented")
@@ -117,8 +116,8 @@ class ReviewRelicPresenterTests: XCTestCase
         
         guard
             let data = ReviewRelicTestsData.StarBasedRatingJson.data(using: .utf8),
-            let response = try? JSONDecoder().decode(ReviewRelicModels.Response.self, from: data) else {
-           
+            let response = try? JSONDecoder().decode(ReviewRelicModels.SettingsResponse.self, from: data) else {
+            
             XCTAssertTrue(false,  "Settings data encoding failed")
             return
         }
