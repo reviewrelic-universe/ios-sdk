@@ -17,14 +17,14 @@ protocol ReviewRelicDisplayLogic: class {
 
 public protocol ReviewRelicDelegate: class {
 
-    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelicModels.SumissionResponse.Transaction)
+    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelic.Transaction)
     func reviewRelicViewControllerRatingSubmissionFailed(_: ReviewRelicViewController)
     func reviewRelicViewControllerLoadSettingsFailed(_: ReviewRelicViewController)
 }
 
 
 extension ReviewRelicDelegate {
-    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelicModels.SumissionResponse.Transaction) {}
+    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelic.Transaction) {}
     func reviewRelicViewControllerRatingSubmissionFailed(_: ReviewRelicViewController){}
     func reviewRelicViewControllerLoadSettingsFailed(_: ReviewRelicViewController){}
 }
@@ -112,13 +112,13 @@ public class ReviewRelicViewController: UIViewController {
     }
     
     
-    public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = .darkText) {
+    public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = UIColor.Relic.textDark) {
         headingLabel.text = text
         headingLabel.font = font
         headingLabel.textColor = textColor
     }
     
-    public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = .darkText) {
+    public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = UIColor.Relic.textDark) {
         descriptionLabel.text = text
         descriptionLabel.font = font
         descriptionLabel.textColor = textColor
@@ -154,12 +154,12 @@ public class ReviewRelicViewController: UIViewController {
         requestData()
                 
         NotificationCenter.default.addObserver(
-            forName: .UIKeyboardWillShow,
+            forName: UIResponder.keyboardWillShowNotification,
             object: nil,
             queue: .main) { [weak self](notification) in
             
             guard let info:Dictionary = (notification as NSNotification).userInfo, let strongSelf = self else { return }
-            let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! Double)
+            let duration = (info[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)
             
             
             let viewPoint = strongSelf.commentTextView.superview?.convert(strongSelf.commentTextView.frame.origin, to: nil)
@@ -168,11 +168,11 @@ public class ReviewRelicViewController: UIViewController {
         }
         
         NotificationCenter.default.addObserver(
-            forName: .UIKeyboardWillHide,
+            forName: UIResponder.keyboardWillHideNotification,
             object: nil,
             queue: .main) { [weak self](notification) in
             guard let info:Dictionary = (notification as NSNotification).userInfo, let strongSelf = self else { return }
-            let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! Double)
+            let duration = (info[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)
             
             strongSelf.mainStackViewCenterConstraint.constant = -40
             strongSelf.view.animateAfterConstraintChangeDuration(seconds: duration)
@@ -258,7 +258,7 @@ extension ReviewRelicViewController {
 extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     
     func displayDataFailure() {
-        view.bringSubview(toFront: resultView)
+        view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
         resultView.show(kind: .failure, themeColor: .lightText)
         delegate?.reviewRelicViewControllerLoadSettingsFailed(self)
@@ -266,7 +266,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     }
     
     func displayDataSubmittedFailed() {
-        view.bringSubview(toFront: resultView)
+        view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
         resultView.show(kind: .failure, themeColor: .lightText)
         delegate?.reviewRelicViewControllerRatingSubmissionFailed(self)
@@ -274,7 +274,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     }
     
     func displayDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse) {
-        view.bringSubview(toFront: resultView)
+        view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
         resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .successGreen)
         delegate?.reviewRelicViewController(self, submittedReviewRating: data.transaction)
@@ -359,7 +359,7 @@ class RRResultView: UIView {
     @IBOutlet weak var resultLabel: UILabel!{
         didSet{
             resultLabel.font = .boldSystemFont(ofSize: 18)
-            resultLabel.textColor = .darkText
+            resultLabel.textColor = UIColor.Relic.textDark
         }
     }
     

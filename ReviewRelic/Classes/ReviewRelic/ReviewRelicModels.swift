@@ -74,26 +74,13 @@ public enum ReviewRelicModels {
     }
     // MARK: - Resonse
     public struct SumissionResponse: Codable {
-        let transaction: Transaction
+        let transaction: ReviewRelic.Transaction
         let status: Bool
         
         enum CodingKeys: String, CodingKey {
             case transaction = "data"
             case status
         }
-
-        // MARK: - DataClass
-        public struct Transaction: Codable {
-            let transactionID, uuid: String
-            let rating: Int
-            let label, comments: String?
-            
-            enum CodingKeys: String, CodingKey {
-                case transactionID = "transaction-id"
-                case uuid, rating, label, comments
-            }
-        }
-        
     }
     
     struct ViewModel {
@@ -122,5 +109,19 @@ public enum ReviewRelicModels {
             }
         }
 
+    }
+}
+
+extension ReviewRelic {
+
+    public struct Transaction: Codable {
+        let transactionID, uuid: String
+        let rating: Int
+        let label, comments: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case transactionID = "transaction-id"
+            case uuid, rating, label, comments
+        }
     }
 }

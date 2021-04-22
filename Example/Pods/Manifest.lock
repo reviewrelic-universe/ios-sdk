@@ -1,5 +1,5 @@
 PODS:
-  - ReviewRelic (0.1.0)
+  - ReviewRelic (1.0)
 
 DEPENDENCIES:
   - ReviewRelic (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ReviewRelic: a95fb9eb7cd1a11f85fb30522e46b5b0a3135543
+  ReviewRelic: 7b4b8fd103f2d7f052ddfab90f15daa6be43658d
 
-PODFILE CHECKSUM: 3f3cee22c395d339b5a6702547a10510e6e24e25
+PODFILE CHECKSUM: 396e15be11f034c374a2437e5b797e8dfaf053ac
 
 COCOAPODS: 1.10.1

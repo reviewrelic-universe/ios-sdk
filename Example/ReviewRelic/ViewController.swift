@@ -27,16 +27,16 @@ class ViewController: UIViewController {
         }
         
         let color = UIColor(red: 237/255.0, green: 100/255.0, blue: 166/255.0, alpha: 1)
-        controller.setHeadingLabel(text: "Please share you experience", font: .boldSystemFont(ofSize: 17), textColor: color)
-        controller.setDescriptionLabel(text: "How did you like the last order from our Restaurant. Please leave us a review.", textColor: UIColor.black.withAlphaComponent(0.4))
+        controller.setHeadingLabel(text: "Please share you experience", font: .boldSystemFont(ofSize: 17))
+        controller.setDescriptionLabel(text: "How did you like the last order from our Restaurant. Please leave us a review.")
         controller.setSubmitButton(title: "Ouch")
-        controller.setReview(image: nil)
+//        controller.setReview(image: UIImage())
         controller.delegate = self
     }
 }
 
 extension ViewController: ReviewRelicDelegate {
-    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelicModels.SumissionResponse.Transaction) {
+    func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelic.Transaction) {
         
     }
     

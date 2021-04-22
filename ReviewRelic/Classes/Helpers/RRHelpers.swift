@@ -96,7 +96,7 @@ extension UIView {
             return
         }
 
-        let activityIndicator = UIActivityIndicatorView (activityIndicatorStyle: UIActivityIndicatorView.Style.white)
+        let activityIndicator = UIActivityIndicatorView (style: UIActivityIndicatorView.Style.white)
         activityIndicator.tag = 909
         activityIndicator.startAnimating()
         activityIndicator.center = self.center
@@ -196,6 +196,24 @@ extension UIColor {
     
     static let borderColor = UIColor.lightGray.withAlphaComponent(0.3)
     static let successGreen = UIColor(hex: 0x228B22)
+    
+    public struct Relic {
+        public static var textDark: UIColor {
+            if #available(iOS 13.0, *) {
+                return .label
+            } else {
+                return.darkText
+            }
+        }
+        
+        static var textLight: UIColor {
+            if #available(iOS 13.0, *) {
+                return .secondaryLabel
+            } else {
+                return.lightGray
+            }
+        }
+    }
 }
 
 public extension UIViewController {
