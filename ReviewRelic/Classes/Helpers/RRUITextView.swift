@@ -30,13 +30,32 @@ class RRUITextView: UITextView, UITextViewDelegate {
     func setPlaceHolder() {
         if text.trimWhiteSpaces() == "" {
             text = placeHolder
-            textColor = UIColor.lightGray
+            
+            if #available(iOS 13.0, *) {
+                textColor = UIColor.secondaryLabel
+            }else{
+                textColor = UIColor.lightGray
+            }
+       
         } else if text == placeHolder {
             text = ""
-            textColor = UIColor.darkText
-        } else{
-            textColor = UIColor.darkText
+            
+            if #available(iOS 13.0, *) {
+                textColor = UIColor.label
+            } else{
+                textColor = UIColor.darkText
+            }
+        
+        } else {
+           
+            if #available(iOS 13.0, *) {
+                textColor = UIColor.label
+            } else {
+                textColor = UIColor.darkText
+            }
         }
+        
+
     }
     
     func textViewDidChange(_ textView: UITextView) {

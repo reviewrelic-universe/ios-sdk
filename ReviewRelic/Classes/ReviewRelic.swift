@@ -38,7 +38,7 @@ public class ReviewRelic {
         self.apiKey = apiKey
         self.appSecret = appSecret
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { [weak self](_) in
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { [weak self](_) in
             self?.getSettings()
         }
     }

@@ -5,6 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 [![Platform](https://img.shields.io/cocoapods/p/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 
+
+Create a Seamless Review Experience For your Mobile Apps. Collect powerful feedback from your iOS native app with Reviewrelic’s flexible and easy-to-install SDK for IOS
+- iOS 12+
+- Swift 5+
+- Full customizalble themes
+- Support for dark mode
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -32,13 +39,13 @@ First confirm to ReviewRelicItem and create an item to be reviewed
 ```ruby
 public protocol ReviewRelicItem {
     var transectionId: String { get set }
-    var reviewsId: String? { get set} // Additional parameter to identify user
+    var reviewsId: String? { get set} // Additional parameter to identify application user
 }
 ```
 
 Initializing ReviewController with Item, and Presentaiton 
 ```ruby
-let controller = presentReviewRelic(item: Item()) {
+let controller = presentReviewRelic(item: <ReviewRelicItem>()) {
 }
 ```
 Setting messages and additional styling
@@ -49,10 +56,9 @@ public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize
 ### Delgation
 
 ```ruby
-func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating rating: Int)
+func reviewRelicViewController(_: ReviewRelicViewController, submittedReviewRating data: ReviewRelic.Transaction)
 func reviewRelicViewControllerRatingSubmissionFailed(_: ReviewRelicViewController)
 func reviewRelicViewControllerLoadSettingsFailed(_: ReviewRelicViewController)
-
 ```
 
 ## License
