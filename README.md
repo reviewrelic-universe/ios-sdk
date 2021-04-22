@@ -38,7 +38,7 @@ ReviewRelic.shared.initialize(apiKey: APIKEY, appSecret: APPSECRET)
 First confirm to ReviewRelicItem and create an item to be reviewed
 ```ruby
 public protocol ReviewRelicItem {
-    var transectionId: String { get set }
+    var transactionId: String { get set }
     var reviewsId: String? { get set} // Additional parameter to identify application user
 }
 ```

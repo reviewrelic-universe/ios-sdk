@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'raheelsadiq' => '“raheel.sadiq.08@gmail.com”' }
-  s.source           = { :git => 'https://github.com/reviewrelic-universe/ios-sdk.git', :tag => s.version.to_s}
+  s.source           = { :git => 'https://github.com/reviewrelic-universe/ios-sdk.git', :branch => "main", :tag => s.version.to_s}
   s.swift_version    = '5.0'
 
   s.ios.deployment_target = '12.0'
