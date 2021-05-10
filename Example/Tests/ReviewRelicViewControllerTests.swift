@@ -84,6 +84,6 @@ class ReviewRelicViewControllerTests: XCTestCase {
 }
 
 struct TestItem: ReviewRelicItem {
-    var transactionId: String = "11"
+    var transactionId: String? = "11"
     var reviewsId: String? = nil
 }
