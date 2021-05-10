@@ -9,9 +9,7 @@
 import UIKit
 
 protocol ReviewRelicBusinessLogic {
-    func requestReviewData()
-//    func submitData(request: ReviewRelicModels.Request)
-    
+    func requestReviewData()    
     func submitData(
         request: ReviewRelicModels.Request,
         completion: (()->())?

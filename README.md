@@ -45,6 +45,7 @@ public protocol ReviewRelicItem {
 
 Initializing ReviewController with Item, and Presentaiton 
 ```ruby
+///item is optional
 let controller = presentReviewRelic(item: <ReviewRelicItem>()) {
 }
 ```

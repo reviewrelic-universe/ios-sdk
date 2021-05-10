@@ -217,7 +217,7 @@ extension UIColor {
 }
 
 public extension UIViewController {
-    func presentReviewRelic(item: ReviewRelicItem, completion: (() -> Void)? = nil) -> ReviewRelicViewController {
+    func presentReviewRelic(item: ReviewRelicItem? = nil, completion: (() -> Void)? = nil) -> ReviewRelicViewController {
         let controller = ReviewRelicViewController.instanceFromNibwith(item: item)
         present(controller, animated: true, completion: completion)
         return controller

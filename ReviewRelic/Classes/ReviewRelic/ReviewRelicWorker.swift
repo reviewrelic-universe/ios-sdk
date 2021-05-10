@@ -43,9 +43,7 @@ class ReviewRelicWorker {
         let url = URL(string:"https://reviewrelic.com/api/v1/store")!
         var urlRequest = URLRequest(url: url)
         
-        
         var params: [String: Any] = [
-            "transaction-id": workerRequest.request.itemId,
             "rating": workerRequest.request.rating,
             "time" : workerRequest.timeStamp,
             "comments": workerRequest.request.comments,
@@ -57,6 +55,10 @@ class ReviewRelicWorker {
         
         if let reviewId = workerRequest.request.reviewerId {
             params["reviewer-id"] = reviewId
+        }
+        
+        if let itemId = workerRequest.request.itemId {
+            params["transaction-id"] = itemId
         }
         
         do{

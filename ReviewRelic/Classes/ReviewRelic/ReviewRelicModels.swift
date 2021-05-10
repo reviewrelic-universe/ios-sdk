@@ -12,7 +12,7 @@ public enum ReviewRelicModels {
     
     struct Request {
         let rating: Int
-        let itemId: String
+        let itemId: String?
         let reviewerId: String?
         let comments: String
         let title: String
@@ -27,9 +27,18 @@ public enum ReviewRelicModels {
         init(request: Request, time: Int? = nil) {
             self.request = request
             timeStamp = time ?? Int(Date().addingTimeInterval(300).timeIntervalSince1970)
-            let signature = """
-{"transaction-id":"\(request.itemId)","rating":\(request.rating),"time":\(timeStamp)}
+            let signature: String
+           
+            if let itemId = request.itemId {
+                signature = """
+{"transaction-id":"\(itemId)","rating":\(request.rating),"time":\(timeStamp)}
 """
+            } else {
+                signature = """
+{"rating":\(request.rating),"time":\(timeStamp)}
+"""
+            }
+            
             hmac = signature.hmac(algorithm: .SHA256, key: ReviewRelic.shared.appSecret)
         }
     }
@@ -115,7 +124,8 @@ public enum ReviewRelicModels {
 extension ReviewRelic {
 
     public struct Transaction: Codable {
-        let transactionID, uuid: String
+        let transactionID: String?
+        let uuid: String
         let rating: Int
         let label, comments: String?
         

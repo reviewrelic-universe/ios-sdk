@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ReviewRelicItem {
-    var transactionId: String { get set }
+    var transactionId: String? { get set }
     var reviewsId: String? {get set}
 }
 

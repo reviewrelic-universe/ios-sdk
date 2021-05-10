@@ -81,7 +81,18 @@ public class ReviewRelicViewController: UIViewController {
         }
     }
     
-    var item: ReviewRelicItem!
+    private var headingLableText = "" {
+        didSet{
+            headingLabel.text = headingLableText
+        }
+    }
+    private var descriptionLabelText = "" {
+        didSet{
+            descriptionLabel.text = descriptionLabelText
+        }
+    }
+
+    var item: ReviewRelicItem?
     var interactor: ReviewRelicBusinessLogic?
     var viewModel: ReviewRelicModels.ViewModel?
     var words: [ReviewRelicModels.ViewModel.WordsData.Word] = []{
@@ -92,7 +103,7 @@ public class ReviewRelicViewController: UIViewController {
     }
     // MARK: Object lifecycle
     
-    class func instanceFromNibwith(item: ReviewRelicItem) -> ReviewRelicViewController {
+    class func instanceFromNibwith(item: ReviewRelicItem? = nil) -> ReviewRelicViewController {
         let bundle = Bundle(for: ReviewRelic.self)
         let controller = ReviewRelicViewController(nibName: "ReviewRelicViewController", bundle: bundle)
         controller.item = item
@@ -113,13 +124,13 @@ public class ReviewRelicViewController: UIViewController {
     
     
     public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = UIColor.Relic.textDark) {
-        headingLabel.text = text
+        headingLableText = text
         headingLabel.font = font
         headingLabel.textColor = textColor
     }
     
     public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = UIColor.Relic.textDark) {
-        descriptionLabel.text = text
+        descriptionLabelText = text
         descriptionLabel.font = font
         descriptionLabel.textColor = textColor
     }
@@ -224,19 +235,20 @@ extension ReviewRelicViewController {
             }
         }
 
+        
         let comment = commentTextView == nil ? "" : commentTextView.rrText
         let request = ReviewRelicModels.Request(
             rating: rating,
-            itemId: item.transactionId,
-            reviewerId: item.reviewsId,
+            itemId: item?.transactionId,
+            reviewerId: item?.reviewsId,
             comments: comment,
-            title: headingLabel.text ?? "",
-            description: descriptionLabel.text ?? "")
+            title: headingLableText,
+            description: descriptionLabelText)
         
         interactor?.submitData(request: request, completion: nil)
         (sender as? RRButton)?.set(state: .loading)
     }
-    
+        
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
