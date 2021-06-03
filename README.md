@@ -4,12 +4,12 @@
 [![License](https://img.shields.io/cocoapods/l/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 [![Platform](https://img.shields.io/cocoapods/p/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 
-
-❮img src="Screenshots/L1.png" width="100" ❯❮img src="Screenshots/L2.png" width="100" ❯❮img src="Screenshots/L3.gig" width="100" ❯
-
-❮img src="Screenshots/D1.png" width="100" ❯❮img src="Screenshots/D2.png" width="100" ❯
-
 Create a Seamless Review Experience For your Mobile Apps. Collect powerful feedback from your iOS native app with Reviewrelic’s flexible and easy-to-install SDK for IOS
+
+<img src="Screenshots/L1.png" width="250">  <img src="Screenshots/L2.png" width="250" >  <img src="Screenshots/L3.gif" width="250" >
+
+<img src="Screenshots/D1.png" width="250">  <img src="Screenshots/D2.png" width="250">
+
 
 ## Requirements
 
@@ -35,9 +35,10 @@ pod 'ReviewRelic'
 In didFinishLaunchingWithOptions initialize with APIKey and AppSecret from admin panel.
 ```ruby
 ReviewRelic.shared.initialize(
-apiKey: APIKEY, 
-appSecret: APPSECRET,
-merchantId: MERCHANT_ID)
+    apiKey: APIKEY, 
+    appSecret: APPSECRET,
+    merchantId: MERCHANT_ID
+)
 ```
 
 ### Presenting ReviewRelic
@@ -54,8 +55,11 @@ Initializing ReviewController, and Presentaiton
 ```ruby
 ///item is optional
 let controller = presentReviewRelic(item: <ReviewRelicItem>(), completion: {
+    //Perform any action after presentation 
 })
-OR
+```
+OR simply
+```ruby
 let controller = presentReviewRelic()
 ```
 Setting messages and additional styling
