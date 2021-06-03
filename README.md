@@ -1,12 +1,18 @@
 # ReviewRelic
 
-[![CI Status](https://img.shields.io/travis/raheelsadiq/ReviewRelic.svg?style=flat)](https://travis-ci.org/raheelsadiq/ReviewRelic)
 [![Version](https://img.shields.io/cocoapods/v/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 [![License](https://img.shields.io/cocoapods/l/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 [![Platform](https://img.shields.io/cocoapods/p/ReviewRelic.svg?style=flat)](https://cocoapods.org/pods/ReviewRelic)
 
-
 Create a Seamless Review Experience For your Mobile Apps. Collect powerful feedback from your iOS native app with Reviewrelic’s flexible and easy-to-install SDK for IOS
+
+<img src="Screenshots/L1.png" width="250">  <img src="Screenshots/L2.png" width="250" >  <img src="Screenshots/L3.gif" width="250" >
+
+<img src="Screenshots/D1.png" width="250">  <img src="Screenshots/D2.png" width="250">
+
+
+## Requirements
+
 - iOS 12+
 - Swift 5+
 - Full customizalble themes
@@ -15,8 +21,6 @@ Create a Seamless Review Experience For your Mobile Apps. Collect powerful feedb
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -30,7 +34,11 @@ pod 'ReviewRelic'
 ## Initialization
 In didFinishLaunchingWithOptions initialize with APIKey and AppSecret from admin panel.
 ```ruby
-ReviewRelic.shared.initialize(apiKey: APIKEY, appSecret: APPSECRET)
+ReviewRelic.shared.initialize(
+    apiKey: APIKEY, 
+    appSecret: APPSECRET,
+    merchantId: MERCHANT_ID
+)
 ```
 
 ### Presenting ReviewRelic
@@ -38,21 +46,27 @@ ReviewRelic.shared.initialize(apiKey: APIKEY, appSecret: APPSECRET)
 First confirm to ReviewRelicItem and create an item to be reviewed
 ```ruby
 public protocol ReviewRelicItem {
-    var transactionId: String { get set }
+    var transactionId: String? { get set } // Additional parameter to identify transaction
     var reviewsId: String? { get set} // Additional parameter to identify application user
 }
 ```
 
-Initializing ReviewController with Item, and Presentaiton 
+Initializing ReviewController, and Presentaiton 
 ```ruby
 ///item is optional
-let controller = presentReviewRelic(item: <ReviewRelicItem>()) {
-}
+let controller = presentReviewRelic(item: <ReviewRelicItem>(), completion: {
+    //Perform any action after presentation 
+})
+```
+OR simply
+```ruby
+let controller = presentReviewRelic()
 ```
 Setting messages and additional styling
 ```ruby
 public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = .darkText) {
 public func setDescriptionLabel(text: String, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = .darkText) {
+public var thankYouText: String // Set message after successful submission
 ```
 ### Delgation
 

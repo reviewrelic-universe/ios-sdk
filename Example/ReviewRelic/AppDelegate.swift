@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ReviewRelic.shared.initialize(
             apiKey: apiKey,
-            appSecret: "7e659a91fefee11b87700e582639ec61d4869a99d1232577c64400c5b17bf103")
+            appSecret: "7e659a91fefee11b87700e582639ec61d4869a99d1232577c64400c5b17bf103",
+            merchantId: "")
     
         return true
     }

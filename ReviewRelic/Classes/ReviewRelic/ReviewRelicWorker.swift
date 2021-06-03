@@ -36,6 +36,7 @@ class ReviewRelicWorker {
     func submitData(
         workerRequest: ReviewRelicModels.WorkerRequest,
         apiKey: String,
+        merchantId: String,
         success: @escaping ((_ responseData: Data) ->Void),
         failure: @escaping (() -> Void)
         ) {
@@ -47,6 +48,7 @@ class ReviewRelicWorker {
             "rating": workerRequest.request.rating,
             "time" : workerRequest.timeStamp,
             "comments": workerRequest.request.comments,
+            "merchant_id": merchantId,
             "extra": [
                 "title": workerRequest.request.title,
                 "description": workerRequest.request.description

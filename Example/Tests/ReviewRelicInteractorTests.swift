@@ -30,7 +30,8 @@ class ReviewRelicInteractorTests: XCTestCase
         
         ReviewRelic.shared.initialize(
             apiKey: apiKey,
-            appSecret: "7e659a91fefee11b87700e582639ec61d4869a99d1232577c64400c5b17bf103")
+            appSecret: "7e659a91fefee11b87700e582639ec61d4869a99d1232577c64400c5b17bf103",
+            merchantId: "")
     }
     
     override func tearDown()
@@ -82,7 +83,7 @@ class ReviewRelicInteractorTests: XCTestCase
         XCTAssertEqual(workerRequest.hmac, createdHMACForOneTime, "Signature is not valid for requests")
     }
     
-    func testHMACWithoutTransectionId(){
+    func testHMACWithoutTransactionId(){
         let request = ReviewRelicModels.Request(rating: 1, itemId: nil, reviewerId: nil, comments: "comments", title: "", description: "")
         let workerRequest = ReviewRelicModels.WorkerRequest(request: request, time: 1617446778)
         let createdHMACForOneTimeWithoutTransactionId = "5d3ccd40d0db3637ff69ec517298d4f999ea0d2cc061ca6ca4ea19ec9e3d0bd7"

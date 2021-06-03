@@ -33,10 +33,13 @@ public class ReviewRelic {
     let bundle = Bundle(for: ReviewRelic.self)
     var apiKey: String!
     var appSecret: String!
+    var merchantId: String!
     
-    public func initialize(apiKey: String, appSecret: String) {
+    public func initialize(apiKey: String, appSecret: String, merchantId: String) {
+        
         self.apiKey = apiKey
         self.appSecret = appSecret
+        self.merchantId = merchantId
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { [weak self](_) in
             self?.getSettings()

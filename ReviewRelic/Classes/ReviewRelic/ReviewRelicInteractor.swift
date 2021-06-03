@@ -55,6 +55,7 @@ class ReviewRelicInteractor: ReviewRelicBusinessLogic, ReviewRelicDataStore {
         worker?.submitData(
             workerRequest: workerRequst,
             apiKey: ReviewRelic.shared.apiKey,
+            merchantId: ReviewRelic.shared.merchantId,
             success: { [weak self](data) in
                 
                 if let response = try? JSONDecoder().decode(ReviewRelicModels.SumissionResponse.self, from: data) {

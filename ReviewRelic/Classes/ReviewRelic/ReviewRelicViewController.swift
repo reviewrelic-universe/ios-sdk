@@ -123,6 +123,7 @@ public class ReviewRelicViewController: UIViewController {
     }
     
     
+    public var thankYouText = "Review submitted!"
     public func setHeadingLabel(text: String, font: UIFont? = .boldSystemFont(ofSize: 14), textColor: UIColor? = UIColor.Relic.textDark) {
         headingLableText = text
         headingLabel.font = font
@@ -272,7 +273,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     func displayDataFailure() {
         view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
-        resultView.show(kind: .failure, themeColor: .lightText)
+        resultView.show(kind: .failure, themeColor: .lightText, thankYouText: thankYouText)
         delegate?.reviewRelicViewControllerLoadSettingsFailed(self)
         dismiss()
     }
@@ -280,7 +281,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     func displayDataSubmittedFailed() {
         view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
-        resultView.show(kind: .failure, themeColor: .lightText)
+        resultView.show(kind: .failure, themeColor: .lightText, thankYouText: thankYouText)
         delegate?.reviewRelicViewControllerRatingSubmissionFailed(self)
         dismiss()
     }
@@ -288,7 +289,7 @@ extension ReviewRelicViewController: ReviewRelicDisplayLogic {
     func displayDataSubmittedSuccessfully(data: ReviewRelicModels.SumissionResponse) {
         view.bringSubviewToFront(resultView)
         resultView.showWithAnimation()
-        resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .successGreen)
+        resultView.show(kind: .success, themeColor: viewModel?.themeColor ?? .successGreen, thankYouText: thankYouText)
         delegate?.reviewRelicViewController(self, submittedReviewRating: data.transaction)
         dismiss()
     }
@@ -380,11 +381,11 @@ class RRResultView: UIView {
         case failure
     }
     
-    func show(kind:Kind, themeColor: UIColor) {
+    func show(kind:Kind, themeColor: UIColor, thankYouText: String) {
         switch kind {
         case .success:
             resultImageView.image = UIImage(namedInBundle: "successTick")
-            resultLabel.text = "Review submitted successfully!"
+            resultLabel.text = thankYouText
             resultImageView.tintColor = themeColor
             resultLabel.textColor = themeColor
         case .failure:
