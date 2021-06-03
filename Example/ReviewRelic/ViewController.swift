@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         controller.setHeadingLabel(text: "Please share you experience", font: .boldSystemFont(ofSize: 17))
         controller.setDescriptionLabel(text: "How did you like the last order from our Restaurant. Please leave us a review.")
         controller.setSubmitButton(title: "Submit")
-
+        controller.thankYouText = "Review submitted successfully!"
+        
         controller.delegate = self
     }
 }
